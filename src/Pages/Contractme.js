@@ -1,28 +1,26 @@
 import React, { useRef } from "react";
 import emailjs from "emailjs-com";
+import "dotenv/config";
 
 export const Contractme = () => {
+  const SERVER_KEY = process.env.SERVER_KEY;
+  const TEMPLATE_KEY = process.env.TEMPLATE_KEY;
+  const EMAIL_KEY = process.env.EMAIL_KEY;
+
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
     console.log(form.current);
 
-    emailjs
-      .sendForm(
-        "service_9uravqy",
-        "template_xwadr1d",
-        form.current,
-        "ux_jvJYEXA6-YlGvo"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          alert("Email Sent Successfully");
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    emailjs.sendForm(SERVER_KEY, TEMPLATE_KEY, form.current, EMAIL_KEY).then(
+      (result) => {
+        console.log(result.text);
+        alert("Email Sent Successfully");
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
     e.target.reset();
   };
   return (
