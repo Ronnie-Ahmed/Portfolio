@@ -10,7 +10,6 @@ export const Contractme = () => {
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
-    console.log(form.current);
 
     emailjs.sendForm(SERVER_KEY, TEMPLATE_KEY, form.current, EMAIL_KEY).then(
       (result) => {
