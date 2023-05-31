@@ -25,7 +25,12 @@ export const Aboutme = () => {
             </div>
             <div className="flex justify-center mt-4">
               <button className="mr-2 px-4 py-2 rounded-md bg-gradient-to-r from-blue-500 to-blue-700 text-white hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-900 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <a href="/path/to/file.pdf" download>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://drive.google.com/file/d/1lKSI432Lae8yKhNebOvDU-P8MNPkSMnF/view?usp=sharing"
+                  download
+                >
                   Download PDF
                 </a>
               </button>
