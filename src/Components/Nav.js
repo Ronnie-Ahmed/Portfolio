@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 import { AiOutlineHome } from "react-icons/ai";
 import { GiSkills } from "react-icons/gi";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
