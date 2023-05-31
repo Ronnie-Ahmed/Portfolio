@@ -1,14 +1,12 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://portfolio-2krt9vvxl-ronnie-ahmed.vercel.app",
   "private": true,
+  "homepage": "/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "add": "^2.0.6",
-    "dotenv": "^16.1.1",
     "emailjs-com": "^3.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

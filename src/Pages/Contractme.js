@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import emailjs from "emailjs-com";
-import "dotenv/config";
 
 export const Contractme = () => {
   const SERVER_KEY = process.env.SERVER_KEY;
