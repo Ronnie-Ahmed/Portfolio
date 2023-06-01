@@ -1,7 +1,13 @@
 import React from "react";
 
 import image2 from "../assets/Ronnie2.jpg";
-import { FaInstagram, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaFacebook,
+  FaGithub,
+  FaLinkedin,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 export const Aboutme = () => {
   return (
@@ -78,6 +84,16 @@ export const Aboutme = () => {
                   className="hover:underline text-black-300 hover:text-black-100"
                 >
                   <FaLinkedin className="inline-block mr-2 mb-1 text-2xl" />
+                </a>
+              </div>
+              <div>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://wa.link/ur2yll"
+                  className="hover:underline text-black-300 hover:text-black-100"
+                >
+                  <FaWhatsapp className="inline-block mr-2 mb-1 text-2xl" />
                 </a>
               </div>
             </div>
