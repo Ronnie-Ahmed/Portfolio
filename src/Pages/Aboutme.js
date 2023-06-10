@@ -34,7 +34,7 @@ export const Aboutme = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://drive.google.com/file/d/1ugDaA1nLOvmnhOoBzgEP-gYw8QvTXxTP/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1XEWivBHutFws-xvM2uYDK2IWDMWEgcOo/view?usp=sharing"
                   download
                 >
                   Download PDF
