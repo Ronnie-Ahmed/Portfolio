@@ -24,7 +24,7 @@ export const Work = () => {
       title: "SmartContractify",
       description:
         "Simple web3 dapp to deploy smart contracts and interact with them.",
-      githubLink: "https://github.com/Ronnie-Ahmed/CineTube",
+      githubLink: "https://github.com/Ronnie-Ahmed/Interact_with_SmartContract",
       imageSrc: `${iteract}`,
     },
   ];
