@@ -6,6 +6,7 @@ import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { GrServices } from "react-icons/gr";
 import { GrContactInfo } from "react-icons/gr";
 
+
 export const Nav = () => {
   return (
     <div className="fixed top-0 left-0 w-full p-4 flex flex-wrap justify-center items-center backdrop-filter backdrop-blur-sm">

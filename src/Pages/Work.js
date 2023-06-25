@@ -1,8 +1,9 @@
 import React from "react";
 import { ProjectCard } from "../Components/ProjectCard";
-import blockestate from "../assets/Blockestate.png";
+import blockestate from "../assets/userprofile.png";
 import cinetube from "../assets/cinetube.png";
 import iteract from "../assets/iteract.png";
+import nftmarket from "../assets/nftmarket.png";
 
 export const Work = () => {
   const projects = [
@@ -12,12 +13,14 @@ export const Work = () => {
         "Blockchain Based Real Estate Marketplace. A decentralized real estate marketplace on the Ethereum blockchain.",
       githubLink:
         "https://github.com/Ronnie-Ahmed/Blockchain-Based-Real-Estate-Marketplace",
+      Live: null,
       imageSrc: `${blockestate}`,
     },
     {
       title: "CineTube",
       description: "Give you information about movies",
       githubLink: "https://github.com/Ronnie-Ahmed/CineTube",
+      Live: null,
       imageSrc: `${cinetube}`,
     },
     {
@@ -25,7 +28,16 @@ export const Work = () => {
       description:
         "Simple web3 dapp to deploy smart contracts and interact with them.",
       githubLink: "https://github.com/Ronnie-Ahmed/Interact_with_SmartContract",
+      Live: null,
       imageSrc: `${iteract}`,
+    },
+    {
+      title: "NFTMarketPlace",
+      description:
+        "NFT Marketplace is a platform that facilitates the buying, selling, and trading of non-fungible tokens (NFTs).",
+      githubLink: "https://github.com/Ronnie-Ahmed/NFTMARKETPLACE",
+      Live: "https://nftmarketplace-igfftl5e3-ronnie-ahmed.vercel.app/",
+      imageSrc: `${nftmarket}`,
     },
   ];
   return (
@@ -48,6 +60,7 @@ export const Work = () => {
             description={project.description}
             githubLink={project.githubLink}
             imageSrc={project.imageSrc}
+            Live={project.Live}
           />
         ))}
       </div>

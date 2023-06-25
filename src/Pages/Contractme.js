@@ -2,23 +2,30 @@ import React, { useRef } from "react";
 import emailjs from "emailjs-com";
 
 export const Contractme = () => {
-  const SERVER_KEY = process.env.SERVER_KEY;
-  const TEMPLATE_KEY = process.env.TEMPLATE_KEY;
-  const EMAIL_KEY = process.env.EMAIL_KEY;
+  // const SERVER_KEY = process.env.SERVER_KEY;
+  // const TEMPLATE_KEY = process.env.TEMPLATE_KEY;
+  // const EMAIL_KEY = process.env.EMAIL_KEY;
 
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(SERVER_KEY, TEMPLATE_KEY, form.current, EMAIL_KEY).then(
-      (result) => {
-        console.log(result.text);
-        alert("Email Sent Successfully");
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
+    emailjs
+      .sendForm(
+        "service_9uravqy",
+        "template_xwadr1d",
+        form.current,
+        "0I-yVHiRaDswFf8r0"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Email Sent Successfully");
+        },
+        (error) => {
+          alert("Email Not Sent");
+        }
+      );
     e.target.reset();
   };
   return (
