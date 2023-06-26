@@ -37,7 +37,7 @@ export const Aboutme = () => {
                   href="https://drive.google.com/file/d/1iZrZhUX2o1ySIxbwAkfCionqW4y85Jox/view?usp=sharing"
                   download
                 >
-                  Download PDF
+                  View Resume
                 </a>
               </button>
 
