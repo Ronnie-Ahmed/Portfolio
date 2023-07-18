@@ -16,7 +16,7 @@ export const Services = () => {
           </h1>
         </div>
       </div>
-      <section className="flex flex-row items-center mx-4 px-1 md:mx-16 bg-gradient-to-r from-gray-500 to-gray-950 rounded-lg p-8 shadow-xl hover:shadow-2xl shadow-black transform transition-all duration-300 hover:scale-105 mb-10">
+      <div className="flex flex-col md:flex-row items-center mx-4 md:mx-16 bg-gradient-to-r from-gray-500 to-gray-950 rounded-lg p-8 shadow-xl hover:shadow-2xl shadow-black transform transition-all duration-300 hover:scale-105 mb-10">
         <div>
           <img
             src={smart}
@@ -24,9 +24,8 @@ export const Services = () => {
             className="max-w-full h-auto rounded-lg shadow-lg hover:shadow-2xl shadow-sky-950 transform hover:scale-105 transition-all duration-300"
           />
         </div>
-
-        <div className="mt-4 text-center">
-          <div className="inline-block bg-sky-950 text-white px-0.5 py-1 rounded-md shadow-md hover:shadow-2xl shadow-black hover:-translate-y-1 transition-all duration-300">
+        <div className="mt-4 text-center md:text-left">
+          <div className="inline-block bg-sky-950 text-white ml-2 px-0.5 py-1 rounded-md shadow-md hover:shadow-2xl shadow-black hover:-translate-y-1 transition-all duration-300">
             <p className="text-small font-semibold">
               I'm a smart contract specialist with expertise in Solidity,
               ERC721, ERC777, and ERC1155 smart contracts from OpenZeppelin. I
@@ -37,8 +36,8 @@ export const Services = () => {
             </p>
           </div>
         </div>
-      </section>
-      <section className="flex flex-row items-center mx-4 px-1 md:mx-16 bg-gradient-to-r from-gray-500 to-gray-950 rounded-lg p-8 shadow-xl hover:shadow-2xl shadow-black transform transition-all duration-300 hover:scale-105 mb-10">
+      </div>
+      <div className="flex flex-col md:flex-row items-center mx-4 md:mx-16 bg-gradient-to-r from-gray-500 to-gray-950 rounded-lg p-8 shadow-xl hover:shadow-2xl shadow-black transform transition-all duration-300 hover:scale-105 mb-10">
         <div>
           <img
             src={web3}
@@ -46,9 +45,8 @@ export const Services = () => {
             className="max-w-full h-auto rounded-lg shadow-lg hover:shadow-2xl shadow-sky-950 transform hover:scale-105 transition-all duration-300"
           />
         </div>
-
-        <div className="mt-4 text-center">
-          <div className="inline-block bg-sky-950 text-white px-0.5 py-1 rounded-md shadow-md hover:shadow-2xl shadow-black hover:-translate-y-1 transition-all duration-300">
+        <div className="mt-4 text-center md:text-left">
+          <div className="inline-block bg-sky-950 text-white  ml-2 px-0.5 py-1 rounded-md shadow-md hover:shadow-2xl shadow-black hover:-translate-y-1 transition-all duration-300">
             <p className="text-small font-semibold">
               I'm a full-stack web3 developer with expertise in NFT and real
               estate marketplaces. I stay updated with the latest web3
@@ -58,8 +56,8 @@ export const Services = () => {
             </p>
           </div>
         </div>
-      </section>
-      <section className="flex flex-row items-center mx-4 px-1 md:mx-16 bg-gradient-to-r from-gray-500 to-gray-950 rounded-lg p-8 shadow-xl hover:shadow-2xl shadow-black transform transition-all duration-300 hover:scale-105 mb-10">
+      </div>
+      <div className="flex flex-col md:flex-row items-center mx-4 md:mx-16 bg-gradient-to-r from-gray-500 to-gray-950 rounded-lg p-8 shadow-xl hover:shadow-2xl shadow-black transform transition-all duration-300 hover:scale-105 mb-10">
         <div>
           <img
             src={blockchain}
@@ -67,9 +65,8 @@ export const Services = () => {
             className="max-w-full h-auto rounded-lg shadow-lg hover:shadow-2xl shadow-sky-950 transform hover:scale-105 transition-all duration-300"
           />
         </div>
-
-        <div className="mt-4 text-center">
-          <div className="inline-block bg-sky-950 text-white px-0.5 py-1 rounded-md shadow-md hover:shadow-2xl shadow-black hover:-translate-y-1 transition-all duration-300">
+        <div className="mt-4 text-center md:text-left">
+          <div className="inline-block bg-sky-950 ml-2 text-white px-0.5 py-1 rounded-md shadow-md hover:shadow-2xl shadow-black hover:-translate-y-1 transition-all duration-300">
             <p className="text-small font-semibold">
               I'm a blockchain learner with strong expertise in Ethereum.
               Continuously learning and staying updated with new concepts, I
@@ -80,7 +77,7 @@ export const Services = () => {
             </p>
           </div>
         </div>
-      </section>
+      </div>
     </section>
   );
 };

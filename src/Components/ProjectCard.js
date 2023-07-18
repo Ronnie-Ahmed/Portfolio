@@ -45,7 +45,7 @@ export const ProjectCard = ({
             href={Live}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block ml-20 bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 bg-opacity-70 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 transform-gpu hover:scale-105 hover:rotate-3 hover:translate-y-[-2px] backdrop-filter backdrop-blur-lg"
+            className="inline-block ml-20 bg-gradient-to-r m-2 from-blue-500 via-gray-500 to-blue-600 bg-opacity-70 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 transform-gpu hover:scale-105 hover:rotate-3 hover:translate-y-[-2px] backdrop-filter backdrop-blur-lg"
           >
             Live Demo
           </a>
