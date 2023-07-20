@@ -4,6 +4,7 @@ import blockestate from "../assets/userprofile.png";
 import cinetube from "../assets/cinetube.png";
 import iteract from "../assets/iteract.png";
 import nftmarket from "../assets/nftmarket.png";
+import librarynft from "../assets/LibraryHome.png";
 
 export const Work = () => {
   const projects = [
@@ -38,6 +39,14 @@ export const Work = () => {
       githubLink: "https://github.com/Ronnie-Ahmed/NFTMARKETPLACE",
       Live: "https://nftmarketplace-igfftl5e3-ronnie-ahmed.vercel.app/",
       imageSrc: `${nftmarket}`,
+    },
+    {
+      title: "LibraryNFT",
+      description:
+        "LibraryNFT allows users to store their favorite books as Non-Fungible Tokens (NFTs) on the blockchain using Solidity, making them accessible to others in exchange for an access price set by the book owner.",
+      githubLink: "https://github.com/Ronnie-Ahmed/LibraryNFT",
+      Live: "https://library-nft.vercel.app/",
+      imageSrc: `${librarynft}`,
     },
   ];
   return (
