@@ -5,6 +5,7 @@ import cinetube from "../assets/cinetube.png";
 import iteract from "../assets/iteract.png";
 import nftmarket from "../assets/nftmarket.png";
 import librarynft from "../assets/LibraryHome.png";
+import dao from "../assets/DaoHomepage.png";
 
 export const Work = () => {
   const projects = [
@@ -47,6 +48,14 @@ export const Work = () => {
       githubLink: "https://github.com/Ronnie-Ahmed/LibraryNFT",
       Live: "https://library-nft.vercel.app/",
       imageSrc: `${librarynft}`,
+    },
+    {
+      title: "🐧 🐧 DAO 🐧🐧",
+      description:
+        "Propose game-changing ideas and watch them transform into reality. Prepare for voting as proposals gain momentum, and then cast your vote with just a few clicks. Vote for, against, or abstain—your decision counts! 💪",
+      githubLink: "https://github.com/Ronnie-Ahmed/DAO",
+      Live: "https://dao-ronnie-ahmed.vercel.app/",
+      imageSrc: `${dao}`,
     },
   ];
   return (
