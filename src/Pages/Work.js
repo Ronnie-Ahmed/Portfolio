@@ -6,6 +6,7 @@ import iteract from "../assets/iteract.png";
 import nftmarket from "../assets/nftmarket.png";
 import librarynft from "../assets/LibraryHome.png";
 import dao from "../assets/DaoHomepage.png";
+import Lottery from "../assets/LotteryHome.png";
 
 export const Work = () => {
   const projects = [
@@ -56,6 +57,14 @@ export const Work = () => {
       githubLink: "https://github.com/Ronnie-Ahmed/DAO",
       Live: "https://dao-ronnie-ahmed.vercel.app/",
       imageSrc: `${dao}`,
+    },
+    {
+      title: "🎰💸🍀 Lottery 🎯🏆🤞",
+      description:
+        "The Decentralized Lottery Dapp is an innovative project that leverages blockchain technology to bring the excitement of lotteries to the Ethereum network.🌐💰",
+      githubLink: "https://github.com/Ronnie-Ahmed/Lottery",
+      Live: "https://lottery-eight-woad.vercel.app/",
+      imageSrc: `${Lottery}`,
     },
   ];
   return (
