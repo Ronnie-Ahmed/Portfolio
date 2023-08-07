@@ -23,7 +23,7 @@ export const Aboutme = () => {
                 Assalamu Alaikum
               </h1>
               <p className="text-6xl mb-4 italic text-gray-600">
-                I'm Md Raisul Islam Rony
+                I'm Ronnie Ahmed
               </p>
               <p className="text-2xl text-gray-700">
                 An enthusiastic Web3 Developer
@@ -34,7 +34,7 @@ export const Aboutme = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://drive.google.com/file/d/1iZrZhUX2o1ySIxbwAkfCionqW4y85Jox/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1wN2xzOotz5GTrqThsa2T0C37m2521AhA/view?usp=sharing"
                   download
                 >
                   View Resume
