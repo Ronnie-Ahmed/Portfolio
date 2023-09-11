@@ -7,6 +7,7 @@ import nftmarket from "../assets/nftmarket.png";
 import librarynft from "../assets/LibraryHome.png";
 import dao from "../assets/DaoHomepage.png";
 import Lottery from "../assets/LotteryHome.png";
+import TokenSwap from "../assets/testnet.png";
 
 export const Work = () => {
   const projects = [
@@ -65,6 +66,14 @@ export const Work = () => {
       githubLink: "https://github.com/Ronnie-Ahmed/Lottery",
       Live: "https://lottery-eight-woad.vercel.app/",
       imageSrc: `${Lottery}`,
+    },
+    {
+      title: "🔄 Token Swap Web3 Dapp 🌐",
+      description:
+        "Welcome to the Token Swap Web3 Dapp! This decentralized application (Dapp) allows users to exchange mainnet tokens and interact with custom-built ERC20 tokens on the testnet. It also offers features such as creating liquidity pools, adding liquidity, and obtaining free testnet tokens. 🔄",
+      githubLink: "https://github.com/Ronnie-Ahmed/Token_Swap",
+      Live: "https://token-swap-orcin.vercel.app/",
+      imageSrc: `${TokenSwap}`,
     },
   ];
   return (
