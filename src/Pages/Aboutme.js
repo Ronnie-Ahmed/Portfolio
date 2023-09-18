@@ -34,7 +34,7 @@ export const Aboutme = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://drive.google.com/file/d/1UiUIexGId_fdafo_m8_7WQo26sqE--09/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1VKknguSeH-Ptg8ghVhS6jmg362Q2-ad8/view?usp=sharing"
                   download
                 >
                   View Resume
@@ -80,7 +80,7 @@ export const Aboutme = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://www.linkedin.com/in/ronnie-ahmed/"
+                  href="https://www.linkedin.com/in/ronnie-ahmed-a059a7291/"
                   className="hover:underline text-black-300 hover:text-black-100"
                 >
                   <FaLinkedin className="inline-block mr-2 mb-1 text-2xl" />
