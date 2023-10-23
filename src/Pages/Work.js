@@ -8,6 +8,7 @@ import librarynft from "../assets/LibraryHome.png";
 import dao from "../assets/DaoHomepage.png";
 import Lottery from "../assets/LotteryHome.png";
 import TokenSwap from "../assets/testnet.png";
+import Car_rental from "../assets/first.png";
 
 export const Work = () => {
   const projects = [
@@ -74,6 +75,13 @@ export const Work = () => {
       githubLink: "https://github.com/Ronnie-Ahmed/Token_Swap",
       Live: "https://token-swap-orcin.vercel.app/",
       imageSrc: `${TokenSwap}`,
+    },
+    {
+      title: " Car-Rental ",
+      description: "A place for you to get cars",
+      githubLink: "https://github.com/Ronnie-Ahmed/car-rental",
+      Live: "https://car-rental-gray-five.vercel.app/",
+      imageSrc: `${Car_rental}`,
     },
   ];
   return (
