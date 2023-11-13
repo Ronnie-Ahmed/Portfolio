@@ -25,16 +25,14 @@ export const Aboutme = () => {
               <p className="text-6xl mb-4 italic text-gray-600">
                 I'm Ronnie Ahmed
               </p>
-              <p className="text-2xl text-gray-700">
-                An enthusiastic Web3 Developer
-              </p>
+              <p className="text-2xl text-gray-700">Blockchain Developer</p>
             </div>
             <div className="flex justify-center mt-4">
               <button className="mr-2 px-4 py-2 rounded-md bg-gradient-to-r from-blue-500 to-blue-700 text-white hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-900 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://drive.google.com/file/d/1VKknguSeH-Ptg8ghVhS6jmg362Q2-ad8/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1nzgtXfMnd3p9gKNIbbUhm8cJ0Dm5uact/view?usp=sharing"
                   download
                 >
                   View Resume
@@ -46,7 +44,7 @@ export const Aboutme = () => {
               </button>
             </div>
             <div className="flex justify-center mt-4">
-              <div>
+              {/* <div>
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
@@ -55,7 +53,7 @@ export const Aboutme = () => {
                 >
                   <FaFacebook className="inline-block mr-2 mb-1 text-2xl" />
                 </a>
-              </div>
+              </div> */}
               <div>
                 <a
                   target="_blank"
@@ -66,7 +64,7 @@ export const Aboutme = () => {
                   <FaGithub className="inline-block mr-2 mb-1 text-2xl" />
                 </a>
               </div>
-              <div>
+              {/* <div>
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
@@ -75,7 +73,7 @@ export const Aboutme = () => {
                 >
                   <FaInstagram className="inline-block mr-2 mb-1 text-2xl" />
                 </a>
-              </div>
+              </div> */}
               <div>
                 <a
                   target="_blank"
