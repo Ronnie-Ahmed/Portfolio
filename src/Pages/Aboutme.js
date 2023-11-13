@@ -38,10 +38,10 @@ export const Aboutme = () => {
                   View Resume
                 </a>
               </button>
-
+{/* 
               <button className="px-4 py-2 rounded-md bg-gradient-to-r from-gray-500 to-gray-700 text-white hover:bg-gradient-to-r hover:from-gray-700 hover:to-gray-900 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <a href="#contactme">Contact Me</a>
-              </button>
+              </button> */}
             </div>
             <div className="flex justify-center mt-4">
               {/* <div>
