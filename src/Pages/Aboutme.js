@@ -32,7 +32,7 @@ export const Aboutme = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://drive.google.com/file/d/1nzgtXfMnd3p9gKNIbbUhm8cJ0Dm5uact/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1xq1cnV8HisvWpYg9RHpn9GRSQw9HMJIo/view?usp=sharing"
                   download
                 >
                   View Resume
