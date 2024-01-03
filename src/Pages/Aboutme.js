@@ -25,7 +25,9 @@ export const Aboutme = () => {
               <p className="text-6xl mb-4 italic text-gray-600">
                 I'm Ronnie Ahmed
               </p>
-              <p className="text-2xl text-gray-700">Blockchain Developer</p>
+              <p className="text-2xl text-gray-700">
+                Working With Blockchain, Web3, Web(Python Django)
+              </p>
             </div>
             <div className="flex justify-center mt-4">
               <button className="mr-2 px-4 py-2 rounded-md bg-gradient-to-r from-blue-500 to-blue-700 text-white hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-900 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
@@ -38,7 +40,7 @@ export const Aboutme = () => {
                   View Resume
                 </a>
               </button>
-{/* 
+              {/* 
               <button className="px-4 py-2 rounded-md bg-gradient-to-r from-gray-500 to-gray-700 text-white hover:bg-gradient-to-r hover:from-gray-700 hover:to-gray-900 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <a href="#contactme">Contact Me</a>
               </button> */}
