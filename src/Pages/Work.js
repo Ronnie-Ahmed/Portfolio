@@ -9,6 +9,7 @@ import dao from "../assets/DaoHomepage.png";
 import Lottery from "../assets/LotteryHome.png";
 import TokenSwap from "../assets/testnet.png";
 import Car_rental from "../assets/first.png";
+import Task_manager from "../assets/Login_Page.png";
 
 export const Work = () => {
   const projects = [
@@ -82,6 +83,13 @@ export const Work = () => {
       githubLink: "https://github.com/Ronnie-Ahmed/car-rental",
       Live: "https://car-rental-gray-five.vercel.app/",
       imageSrc: `${Car_rental}`,
+    },
+    {
+      title: " Task Manager(Python Django) ",
+      description: "Python Django Project for Mediusware Written Exam",
+      githubLink: "https://github.com/Ronnie-Ahmed/Task_manager/tree/dev.0.0.1",
+      // Live: "https://car-rental-gray-five.vercel.app/",
+      imageSrc: `${Task_manager}`,
     },
   ];
   return (
