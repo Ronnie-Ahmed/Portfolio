@@ -8,6 +8,7 @@ import tailwind from "../assets/tailwindcss.png";
 import solidity from "../assets/solidity-icon.png";
 import C from "../assets/C.png";
 import CPP from "../assets/CPP.png";
+import foundry from "../assets/foundry-banner.png";
 import hardhat from "../assets/hardhat.png";
 import ipfs from "../assets/Ipfs.png";
 import docker from "../assets/docker.png";
@@ -17,6 +18,9 @@ import mongoDB from "../assets/mongoDB.png";
 import metamask from "../assets/MetaMask.png";
 import thirdweb from "../assets/thirdweb.jpg";
 import alchamy from "../assets/Alchamy.png";
+import django from "../assets/Django.png";
+import python from "../assets/Python-logo-notext.svg.png";
+import rust from "../assets/rust.png";
 
 export const Experience = () => {
   return (
@@ -33,10 +37,10 @@ export const Experience = () => {
 
         <div className="flex flex-row items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
           <span className="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900  cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-            C
+            Python
           </span>
           <img
-            src={C}
+            src={python}
             alt="JavaScript"
             className="w-12 h-12  m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3 hover:translate-x-1 hover:translate-y-1"
           />
@@ -44,12 +48,12 @@ export const Experience = () => {
 
         <div className="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
           <img
-            src={CPP}
+            src={rust}
             alt="JavaScript"
             className="w-12 h-12  m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3 hover:translate-x-1 hover:translate-y-1"
           />
           <span className="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900  cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-            C++
+            Rust
           </span>
         </div>
         <div className="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
@@ -89,26 +93,7 @@ export const Experience = () => {
             Ethers js
           </span>
         </div>
-        <div className="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-          <img
-            src={metamask}
-            alt="JavaScript"
-            className="w-12 h-12  m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3 hover:translate-x-1 hover:translate-y-1"
-          />
-          <span className="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900  cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-            Metamask
-          </span>
-        </div>
-        <div className="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-          <img
-            src={ipfs}
-            alt="JavaScript"
-            className="w-12 h-12  m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3 hover:translate-x-1 hover:translate-y-1"
-          />
-          <span className="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900  cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-            IPFS
-          </span>
-        </div>
+
         <div className="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
           <img
             src={solidity}
@@ -119,14 +104,6 @@ export const Experience = () => {
             Solidity
           </span>
         </div>
-      </div>
-      <div className="container mx-auto mb-10 px-4 flex flex-wrap justify-center items-center">
-        <div className="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-          <h1 className="text-3xl p-6 font-bold text-gray-800 tracking-wide leading-tight text-center">
-            web3 Framework
-          </h1>
-        </div>
-
         <div className="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
           <img
             src={hardhat}
@@ -149,12 +126,12 @@ export const Experience = () => {
         </div>
         <div className="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
           <img
-            src={alchamy}
+            src={foundry}
             alt="JavaScript"
             className="w-12 h-12  m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3 hover:translate-x-1 hover:translate-y-1"
           />
           <span className="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900  cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-            Alchamy
+            Foundry
           </span>
         </div>
       </div>
@@ -226,7 +203,7 @@ export const Experience = () => {
       <div className="container mx-auto mb-10 px-4 flex flex-wrap justify-center items-center">
         <div className="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
           <h1 className="text-3xl p-6 font-bold text-gray-800 tracking-wide leading-tight text-center">
-            Web2 Backend
+            Web Backend
           </h1>
         </div>
 
@@ -252,12 +229,12 @@ export const Experience = () => {
         </div>
         <div className="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
           <img
-            src={mongoDB}
+            src={django}
             alt="JavaScript"
             className="w-12 h-12  m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3 hover:translate-x-1 hover:translate-y-1"
           />
           <span className="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900  cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-            Mongo DB
+            Django
           </span>
         </div>
       </div>
