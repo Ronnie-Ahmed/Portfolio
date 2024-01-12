@@ -7,6 +7,7 @@ import reactjs from "../assets/reactjs.png";
 import tailwind from "../assets/tailwindcss.png";
 import solidity from "../assets/solidity-icon.png";
 import C from "../assets/C.png";
+import nextjs from "../assets/nextjs-logo-square.png";
 import CPP from "../assets/CPP.png";
 import foundry from "../assets/foundry-banner.png";
 import hardhat from "../assets/hardhat.png";
@@ -169,6 +170,16 @@ export const Experience = () => {
           />
           <span className="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900  cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
             React js
+          </span>
+        </div>
+        <div className="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
+          <img
+            src={nextjs}
+            alt="JavaScript"
+            className="w-12 h-12  m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3 hover:translate-x-1 hover:translate-y-1"
+          />
+          <span className="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900  cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
+            Next js
           </span>
         </div>
 
