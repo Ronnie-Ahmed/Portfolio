@@ -7,7 +7,7 @@ import { Work } from "./Pages/Work";
 import { Nav } from "./Components/Nav";
 function App() {
   return (
-    <div className="bg-gradient-to-b font-roboto from-gray-700 via-gray-500 to-gray-700 pt-4 px-4 ">
+    <div className="bg-gradient-to-b  font-tektur from-gray-700 via-gray-500 to-gray-700 pt-4 px-4 ">
       <Nav />
       <div className="flex flex-col  mt-12">
         <Aboutme />
