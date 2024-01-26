@@ -87,7 +87,7 @@ export const Aboutme = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://www.linkedin.com/in/ronnie-ahmed-a059a7291/"
+                  href="https://www.linkedin.com/in/md-raisul-islam-rony-a059a7291/"
                   className="hover:underline text-black-300 hover:text-black-100"
                 >
                   <FaLinkedin className="inline-block mr-2 mb-1 text-2xl" />
