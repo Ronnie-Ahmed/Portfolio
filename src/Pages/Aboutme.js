@@ -1,6 +1,6 @@
 import React from "react";
 
-import image2 from "../assets/Ronnie2.jpg";
+import image2 from "../assets/Raisul_Photo.png";
 import {
   FaInstagram,
   FaFacebook,
