@@ -23,7 +23,7 @@ export const Aboutme = () => {
                 Assalamu Alaikum
               </h1>
               <p className="text-6xl mb-4 italic text-gray-600">
-                I'm Md Raisul Islam Rony
+                I'm Md. Raisul Islam Rony
               </p>
               <p className="text-2xl text-gray-700">
                 Blockchain Developer at{" "}
