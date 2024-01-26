@@ -23,10 +23,17 @@ export const Aboutme = () => {
                 Assalamu Alaikum
               </h1>
               <p className="text-6xl mb-4 italic text-gray-600">
-                I'm Ronnie Ahmed
+                I'm Md Raisul Islam Rony
               </p>
               <p className="text-2xl text-gray-700">
-                Working With Blockchain, Web3, Web(Python Django)
+                Blockchain Developer at{" "}
+                <a
+                  href="https://www.devolvedai.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Devolved AI
+                </a>
               </p>
             </div>
             <div className="flex justify-center mt-4">
