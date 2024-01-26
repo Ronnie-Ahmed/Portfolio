@@ -41,7 +41,7 @@ export const Aboutme = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://drive.google.com/file/d/1xq1cnV8HisvWpYg9RHpn9GRSQw9HMJIo/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1y_zBV8H2n1Is4z0QHtlSsb7etZjLsQkH/view?usp=sharing"
                   download
                 >
                   View Resume
