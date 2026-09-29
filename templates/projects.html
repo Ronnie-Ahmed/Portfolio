@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+<h1>Projects</h1>
+<div class="grid">
+  {% for p in projects %}
+  <article class="card">
+    <h2>{{ p.title }}</h2>
+    <p>{{ p.description }}</p>
+    <ul class="tags">
+      {% for t in p.tech %}<li>{{ t }}</li>{% endfor %}
+    </ul>
+    <a href="{{ p.link }}">View on GitHub →</a>
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}
