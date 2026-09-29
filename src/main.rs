@@ -1,72 +1,69 @@
+mod data;
+
 use askama::Template;
 use axum::{response::Html, routing::get, Router};
+use data::{NavItem, Project, Service, SkillGroup};
+use std::{env, fs, path::Path};
 use tower_http::services::ServeDir;
-
-struct Project {
-    title: &'static str,
-    description: &'static str,
-    tech: Vec<&'static str>,
-    link: &'static str,
-}
 
 #[derive(Template)]
 #[template(path = "index.html")]
 struct IndexTemplate {
-    name: &'static str,
-    tagline: &'static str,
-}
-
-#[derive(Template)]
-#[template(path = "projects.html")]
-struct ProjectsTemplate {
+    nav: Vec<NavItem>,
+    skill_groups: Vec<SkillGroup>,
+    services: Vec<Service>,
     projects: Vec<Project>,
 }
 
-#[derive(Template)]
-#[template(path = "contact.html")]
-struct ContactTemplate;
+fn render_index() -> String {
+    IndexTemplate {
+        nav: data::nav(),
+        skill_groups: data::skill_groups(),
+        services: data::services(),
+        projects: data::projects(),
+    }
+    .render()
+    .expect("template render failed")
+}
 
 async fn index() -> Html<String> {
-    let page = IndexTemplate {
-        name: "Md Raisul Islam Rony",
-        tagline: "Rust developer and blockchain systems engineer building fast, reliable backends.",
-    };
-    Html(page.render().unwrap())
+    Html(render_index())
 }
 
-async fn projects() -> Html<String> {
-    let page = ProjectsTemplate {
-        projects: vec![
-            Project {
-                title: "Crypto Watchlist & Price Alert API",
-                description: "JWT auth, Postgres watchlists, and live price fetching.",
-                tech: vec!["Rust", "Axum", "Postgres"],
-                link: "https://github.com/your-username/crypto-watchlist",
-            },
-            Project {
-                title: "Banking System",
-                description: "Atomic transactions with row-level locking for concurrency safety.",
-                tech: vec!["Rust", "Axum", "sqlx"],
-                link: "https://github.com/your-username/banking-system",
-            },
-        ],
-    };
-    Html(page.render().unwrap())
+fn copy_dir(src: &Path, dst: &Path) -> std::io::Result<()> {
+    fs::create_dir_all(dst)?;
+    for entry in fs::read_dir(src)? {
+        let entry = entry?;
+        let target = dst.join(entry.file_name());
+        if entry.file_type()?.is_dir() {
+            copy_dir(&entry.path(), &target)?;
+        } else {
+            fs::copy(entry.path(), target)?;
+        }
+    }
+    Ok(())
 }
 
-async fn contact() -> Html<String> {
-    Html(ContactTemplate.render().unwrap())
+fn build_static() {
+    let _ = fs::remove_dir_all("dist");
+    fs::create_dir_all("dist").unwrap();
+    fs::write("dist/index.html", render_index()).unwrap();
+    copy_dir(Path::new("static"), Path::new("dist/static")).unwrap();
+    println!("Static site written to ./dist");
 }
 
 #[tokio::main]
 async fn main() {
+    if env::args().nth(1).as_deref() == Some("build") {
+        build_static();
+        return;
+    }
+
     let app = Router::new()
         .route("/", get(index))
-        .route("/projects", get(projects))
-        .route("/contact", get(contact))
         .nest_service("/static", ServeDir::new("static"));
 
-    let port = std::env::var("PORT").unwrap_or_else(|_| "3000".into());
+    let port = env::var("PORT").unwrap_or_else(|_| "3000".into());
     let listener = tokio::net::TcpListener::bind(format!("0.0.0.0:{port}"))
         .await
         .unwrap();
