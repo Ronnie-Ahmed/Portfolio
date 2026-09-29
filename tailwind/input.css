@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Tell Tailwind where your classes live */
+@source "../templates";
+
+/* Makes the `font-tektur` class work */
+@theme {
+  --font-tektur: "Tektur", sans-serif;
+}

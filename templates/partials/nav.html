@@ -1,6 +1,6 @@
-<div class="fixed top-0 left-0 w-full p-4 flex flex-wrap justify-center items-center backdrop-blur-sm z-50">
+<div class="fixed top-0 left-0 w-full p-4 flex flex-wrap justify-center items-center backdrop-blur-xs z-50">
   {% for item in nav %}
-  <div class="border border-white border-opacity-50 px-2 py-1 rounded-md shadow-md hover:shadow-2xl shadow-slate-50 hover:-translate-y-1 transition-all duration-300 m-1">
+  <div class="border border-white/50 px-2 py-1 rounded-md shadow-md hover:shadow-2xl shadow-slate-50 hover:-translate-y-1 transition-all duration-300 m-1">
     <a href="{{ item.href }}" class="font-bold text-white">
       <i class="{{ item.icon }} mr-2"></i><span>{{ item.label }}</span>
     </a>
