@@ -2,7 +2,7 @@ mod data;
 
 use askama::Template;
 use axum::{response::Html, routing::get, Router};
-use data::{NavItem, Project, Service, SkillGroup};
+use data::{Experience, NavItem, Project, Service, SkillGroup, Stat};
 use std::{env, fs, path::Path};
 use tower_http::services::ServeDir;
 
@@ -10,22 +10,25 @@ use tower_http::services::ServeDir;
 #[template(path = "index.html")]
 struct IndexTemplate {
     nav: Vec<NavItem>,
+    stats: Vec<Stat>,
+    experience: Vec<Experience>,
+    projects: Vec<Project>,
     skill_groups: Vec<SkillGroup>,
     services: Vec<Service>,
-    projects: Vec<Project>,
 }
 
 fn render_index() -> String {
     IndexTemplate {
         nav: data::nav(),
+        stats: data::stats(),
+        experience: data::experience(),
+        projects: data::projects(),
         skill_groups: data::skill_groups(),
         services: data::services(),
-        projects: data::projects(),
     }
     .render()
     .expect("template render failed")
 }
-
 async fn index() -> Html<String> {
     Html(render_index())
 }

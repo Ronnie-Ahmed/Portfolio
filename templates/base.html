@@ -1,18 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior: smooth; scroll-padding-top: 5rem;">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}Md. Raisul Islam Rony{% endblock %}</title>
-  <meta name="description" content="Portfolio of Md. Raisul Islam Rony, Rust and blockchain developer.">
+  <title>{% block title %}Md. Raisul Islam Rony | Rust &amp; Blockchain Engineer{% endblock %}</title>
+  <meta name="description" content="Md. Raisul Islam Rony, Rust and blockchain engineer building fast, reliable backends and smart contracts.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Tektur&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
   <link rel="stylesheet" href="/static/css/output.css">
+  <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
 </head>
-<body class="bg-gradient-to-b font-tektur from-gray-700 via-gray-500 to-gray-700 pt-4 px-4 text-gray-900">
+<body class="bg-slate-950 text-slate-300 antialiased">
   {% block content %}{% endblock %}
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+      mobileMenu.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => mobileMenu.classList.add("hidden"))
+      );
+    }
+
+    // Fade in on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    // Project filter (a card can belong to several space-separated categories)
+    const buttons = document.querySelectorAll("[data-filter]");
+    const cards = document.querySelectorAll("[data-cat]");
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const f = btn.dataset.filter;
+        buttons.forEach((b) => b.setAttribute("aria-pressed", b === btn ? "true" : "false"));
+        cards.forEach((c) =>
+          c.classList.toggle("hidden", f !== "all" && !c.dataset.cat.split(" ").includes(f))
+        );
+      });
+    });
+  </script>
 </body>
 </html>

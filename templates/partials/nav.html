@@ -1,9 +1,28 @@
-<div class="fixed top-0 left-0 w-full p-4 flex flex-wrap justify-center items-center backdrop-blur-xs z-50">
-  {% for item in nav %}
-  <div class="border border-white/50 px-2 py-1 rounded-md shadow-md hover:shadow-2xl shadow-slate-50 hover:-translate-y-1 transition-all duration-300 m-1">
-    <a href="{{ item.href }}" class="font-bold text-white">
-      <i class="{{ item.icon }} mr-2"></i><span>{{ item.label }}</span>
-    </a>
+<header class="fixed inset-x-0 top-0 z-50 border-b border-slate-800/70 bg-slate-950/70 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+    <a href="#aboutme" class="font-tektur text-lg font-bold text-white">Rony<span class="text-orange-400">.</span></a>
+
+    <nav class="hidden items-center gap-6 text-sm md:flex">
+      {% for item in nav %}
+      <a href="{{ item.href }}" class="text-slate-300 transition hover:text-orange-400">{{ item.label }}</a>
+      {% endfor %}
+      <a href="https://drive.google.com/file/d/1x8q9xqTImBE_OL0C6INSswzXML9QwXL1/view?usp=sharing"
+         target="_blank" rel="noopener noreferrer"
+         class="rounded-md bg-orange-400 px-4 py-1.5 font-semibold text-slate-950 transition hover:bg-orange-300">Resume</a>
+    </nav>
+
+    <button id="menu-btn" class="text-slate-200 md:hidden" aria-label="Toggle menu">
+      <i class="fa-solid fa-bars text-xl"></i>
+    </button>
   </div>
-  {% endfor %}
-</div>
+
+  <nav id="mobile-menu" class="hidden border-t border-slate-800 px-6 py-4 md:hidden">
+    <div class="flex flex-col gap-4">
+      {% for item in nav %}
+      <a href="{{ item.href }}" class="text-slate-300">{{ item.label }}</a>
+      {% endfor %}
+      <a href="https://drive.google.com/file/d/1x8q9xqTImBE_OL0C6INSswzXML9QwXL1/view?usp=sharing"
+         target="_blank" rel="noopener noreferrer" class="font-semibold text-orange-400">Resume</a>
+    </div>
+  </nav>
+</header>

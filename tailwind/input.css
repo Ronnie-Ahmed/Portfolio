@@ -1,9 +1,20 @@
 @import "tailwindcss";
-
-/* Tell Tailwind where your classes live */
 @source "../templates";
 
-/* Makes the `font-tektur` class work */
 @theme {
   --font-tektur: "Tektur", sans-serif;
 }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+html { scroll-behavior: smooth; }

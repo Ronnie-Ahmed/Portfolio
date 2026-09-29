@@ -1,36 +1,49 @@
-<section id="aboutme" class="py-20 mt-6 bg-gray-400 rounded-2xl shadow-md hover:shadow-2xl shadow-slate-50">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-col md:flex-row justify-evenly">
-      <div class="md:w-2/3 flex flex-col justify-center items-center">
-        <div class="text-center">
-          <h1 class="text-3xl mb-10 font-bold text-gray-800 tracking-wide leading-tight">Assalamu Alaikum</h1>
-          <p class="text-4xl md:text-6xl mb-4 italic text-gray-600">I'm Md. Raisul Islam Rony</p>
-          <p class="text-2xl text-gray-700">
-            Rust &amp; Blockchain Engineer at
-            <a href="https://www.eterces.com/" target="_blank" rel="noopener noreferrer" class="underline">Eterces</a>
-          </p>
-        </div>
+<section id="aboutme" class="relative overflow-hidden pt-32 pb-20 scroll-mt-20">
+  <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(249,115,22,0.18),transparent)]"></div>
 
-        <div class="flex justify-center mt-4">
-          <a target="_blank" rel="noopener noreferrer"
-             href="https://drive.google.com/file/d/1y_zBV8H2n1Is4z0QHtlSsb7etZjLsQkH/view?usp=sharing"
-             class="mr-2 px-4 py-2 rounded-md bg-gradient-to-r from-blue-500 to-blue-700 text-white hover:from-blue-700 hover:to-blue-900 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            View Resume
-          </a>
-        </div>
+  <div class="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[1.4fr_1fr]">
+    <div>
+      <span class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900 px-3 py-1 text-xs text-slate-300">
+        <i class="fa-solid fa-location-dot text-orange-400"></i> Dhaka, Bangladesh
+      </span>
 
-        <div class="flex justify-center mt-4 text-2xl gap-4">
-          <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ronnie-Ahmed" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/md-raisul-islam-rony-a059a7291/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a target="_blank" rel="noopener noreferrer" href="https://wa.link/ur2yll" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-        </div>
+      <h1 class="mt-6 font-tektur text-4xl font-bold leading-tight text-white md:text-6xl">
+        Hi, I'm Md. Raisul Islam Rony<br>
+        <span class="text-orange-400">Rust &amp; Blockchain Engineer</span>
+      </h1>
+
+      <p class="mt-6 max-w-xl text-lg text-slate-400">
+        I build fast, reliable backend systems and smart contracts: from Axum APIs
+        backed by Postgres and Redis to Solidity and DeFi applications.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#work" class="rounded-md bg-orange-400 px-5 py-2.5 font-semibold text-slate-950 transition hover:bg-orange-300">View projects</a>
+        <a href="https://drive.google.com/file/d/1x8q9xqTImBE_OL0C6INSswzXML9QwXL1/view?usp=sharing"
+           target="_blank" rel="noopener noreferrer"
+           class="rounded-md border border-slate-600 px-5 py-2.5 font-semibold text-slate-200 transition hover:border-orange-400 hover:text-orange-400">Resume</a>
+        <a href="#contactme" class="rounded-md border border-slate-600 px-5 py-2.5 font-semibold text-slate-200 transition hover:border-orange-400 hover:text-orange-400">Contact</a>
       </div>
 
-      <div class="md:w-1/3 mt-8 md:mt-0">
-        <img src="/static/images/Raisul_Photo.png" alt="Profile"
-             class="w-full h-auto mb-2 p-4 rounded-full object-cover aspect-square transform hover:scale-110 transition-transform"
-             style="box-shadow: 0 2px 10px rgba(0,0,0,.2), 0 4px 20px rgba(0,0,0,.2);">
+      <div class="mt-6 flex gap-5 text-2xl text-slate-400">
+        <a href="https://github.com/Ronnie-Ahmed" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="transition hover:text-orange-400"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/md-raisul-islam-rony-a059a7291/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="transition hover:text-orange-400"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://wa.link/ur2yll" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="transition hover:text-orange-400"><i class="fa-brands fa-whatsapp"></i></a>
       </div>
+
+      <dl class="mt-10 grid max-w-md grid-cols-3 gap-4">
+        {% for stat in stats %}
+        <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-4">
+          <dt class="font-tektur text-2xl font-bold text-white">{{ stat.value }}</dt>
+          <dd class="mt-1 text-xs text-slate-400">{{ stat.label }}</dd>
+        </div>
+        {% endfor %}
+      </dl>
+    </div>
+
+    <div class="mx-auto w-64 md:w-full md:max-w-xs">
+      <img src="/static/images/Raisul_Photo.png" alt="Portrait of Md. Raisul Islam Rony"
+           class="aspect-square w-full rounded-2xl object-cover ring-2 ring-orange-400/60 ring-offset-4 ring-offset-slate-950">
     </div>
   </div>
 </section>

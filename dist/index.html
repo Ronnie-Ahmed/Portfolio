@@ -1,600 +1,1191 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior: smooth; scroll-padding-top: 5rem;">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Md. Raisul Islam Rony</title>
-  <meta name="description" content="Portfolio of Md. Raisul Islam Rony, Rust and blockchain developer.">
+  <title>Md. Raisul Islam Rony | Rust &amp; Blockchain Engineer</title>
+  <meta name="description" content="Md. Raisul Islam Rony, Rust and blockchain engineer building fast, reliable backends and smart contracts.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Tektur&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
   <link rel="stylesheet" href="/static/css/output.css">
+  <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
 </head>
-<body class="bg-gradient-to-b font-tektur from-gray-700 via-gray-500 to-gray-700 pt-4 px-4 text-gray-900">
+<body class="bg-slate-950 text-slate-300 antialiased">
   
-<div class="fixed top-0 left-0 w-full p-4 flex flex-wrap justify-center items-center backdrop-blur-xs z-50">
-  
-  <div class="border border-white/50 px-2 py-1 rounded-md shadow-md hover:shadow-2xl shadow-slate-50 hover:-translate-y-1 transition-all duration-300 m-1">
-    <a href="#aboutme" class="font-bold text-white">
-      <i class="fa-solid fa-house mr-2"></i><span>Me</span>
-    </a>
+<header class="fixed inset-x-0 top-0 z-50 border-b border-slate-800/70 bg-slate-950/70 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+    <a href="#aboutme" class="font-tektur text-lg font-bold text-white">Rony<span class="text-orange-400">.</span></a>
+
+    <nav class="hidden items-center gap-6 text-sm md:flex">
+      
+      <a href="#experience" class="text-slate-300 transition hover:text-orange-400">Experience</a>
+      
+      <a href="#work" class="text-slate-300 transition hover:text-orange-400">Projects</a>
+      
+      <a href="#skills" class="text-slate-300 transition hover:text-orange-400">Skills</a>
+      
+      <a href="#services" class="text-slate-300 transition hover:text-orange-400">What I do</a>
+      
+      <a href="#contactme" class="text-slate-300 transition hover:text-orange-400">Contact</a>
+      
+      <a href="https://drive.google.com/file/d/1x8q9xqTImBE_OL0C6INSswzXML9QwXL1/view?usp=sharing"
+         target="_blank" rel="noopener noreferrer"
+         class="rounded-md bg-orange-400 px-4 py-1.5 font-semibold text-slate-950 transition hover:bg-orange-300">Resume</a>
+    </nav>
+
+    <button id="menu-btn" class="text-slate-200 md:hidden" aria-label="Toggle menu">
+      <i class="fa-solid fa-bars text-xl"></i>
+    </button>
   </div>
-  
-  <div class="border border-white/50 px-2 py-1 rounded-md shadow-md hover:shadow-2xl shadow-slate-50 hover:-translate-y-1 transition-all duration-300 m-1">
-    <a href="#experience" class="font-bold text-white">
-      <i class="fa-solid fa-gears mr-2"></i><span>Skills</span>
-    </a>
-  </div>
-  
-  <div class="border border-white/50 px-2 py-1 rounded-md shadow-md hover:shadow-2xl shadow-slate-50 hover:-translate-y-1 transition-all duration-300 m-1">
-    <a href="#services" class="font-bold text-white">
-      <i class="fa-solid fa-briefcase mr-2"></i><span>Services</span>
-    </a>
-  </div>
-  
-  <div class="border border-white/50 px-2 py-1 rounded-md shadow-md hover:shadow-2xl shadow-slate-50 hover:-translate-y-1 transition-all duration-300 m-1">
-    <a href="#work" class="font-bold text-white">
-      <i class="fa-solid fa-diagram-project mr-2"></i><span>Projects</span>
-    </a>
-  </div>
-  
-  <div class="border border-white/50 px-2 py-1 rounded-md shadow-md hover:shadow-2xl shadow-slate-50 hover:-translate-y-1 transition-all duration-300 m-1">
-    <a href="#contactme" class="font-bold text-white">
-      <i class="fa-solid fa-address-card mr-2"></i><span>Contact Me</span>
-    </a>
-  </div>
-  
-</div>
+
+  <nav id="mobile-menu" class="hidden border-t border-slate-800 px-6 py-4 md:hidden">
+    <div class="flex flex-col gap-4">
+      
+      <a href="#experience" class="text-slate-300">Experience</a>
+      
+      <a href="#work" class="text-slate-300">Projects</a>
+      
+      <a href="#skills" class="text-slate-300">Skills</a>
+      
+      <a href="#services" class="text-slate-300">What I do</a>
+      
+      <a href="#contactme" class="text-slate-300">Contact</a>
+      
+      <a href="https://drive.google.com/file/d/1x8q9xqTImBE_OL0C6INSswzXML9QwXL1/view?usp=sharing"
+         target="_blank" rel="noopener noreferrer" class="font-semibold text-orange-400">Resume</a>
+    </div>
+  </nav>
+</header>
 <div class="flex flex-col mt-12">
-  <section id="aboutme" class="py-20 mt-6 bg-gray-400 rounded-2xl shadow-md hover:shadow-2xl shadow-slate-50">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-col md:flex-row justify-evenly">
-      <div class="md:w-2/3 flex flex-col justify-center items-center">
-        <div class="text-center">
-          <h1 class="text-3xl mb-10 font-bold text-gray-800 tracking-wide leading-tight">Assalamu Alaikum</h1>
-          <p class="text-4xl md:text-6xl mb-4 italic text-gray-600">I'm Md. Raisul Islam Rony</p>
-          <p class="text-2xl text-gray-700">
-            Rust &amp; Blockchain Engineer at
-            <a href="https://www.eterces.com/" target="_blank" rel="noopener noreferrer" class="underline">Eterces</a>
-          </p>
-        </div>
+  <section id="aboutme" class="relative overflow-hidden pt-32 pb-20 scroll-mt-20">
+  <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(249,115,22,0.18),transparent)]"></div>
 
-        <div class="flex justify-center mt-4">
-          <a target="_blank" rel="noopener noreferrer"
-             href="https://drive.google.com/file/d/1y_zBV8H2n1Is4z0QHtlSsb7etZjLsQkH/view?usp=sharing"
-             class="mr-2 px-4 py-2 rounded-md bg-gradient-to-r from-blue-500 to-blue-700 text-white hover:from-blue-700 hover:to-blue-900 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            View Resume
-          </a>
-        </div>
-
-        <div class="flex justify-center mt-4 text-2xl gap-4">
-          <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ronnie-Ahmed" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/md-raisul-islam-rony-a059a7291/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a target="_blank" rel="noopener noreferrer" href="https://wa.link/ur2yll" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-        </div>
-      </div>
-
-      <div class="md:w-1/3 mt-8 md:mt-0">
-        <img src="/static/images/Raisul_Photo.png" alt="Profile"
-             class="w-full h-auto mb-2 p-4 rounded-full object-cover aspect-square transform hover:scale-110 transition-transform"
-             style="box-shadow: 0 2px 10px rgba(0,0,0,.2), 0 4px 20px rgba(0,0,0,.2);">
-      </div>
-    </div>
-  </div>
-</section>
-  <section id="experience" class="flex flex-col py-20 mt-6 bg-gray-400 rounded-2xl shadow-md hover:shadow-2xl shadow-slate-50">
-  
-  <div class="container mx-auto mb-10 px-4 flex flex-wrap justify-center items-center">
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <h1 class="text-3xl p-6 font-bold text-gray-800 tracking-wide leading-tight text-center">Languages</h1>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/rust.png" alt="Rust" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        Rust
-      </span>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/Python-logo-notext.svg.png" alt="Python" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        Python
-      </span>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/java-script.png" alt="JavaScript" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        JavaScript
-      </span>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/solidity-icon.png" alt="Solidity" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        Solidity
-      </span>
-    </div>
-    
-  </div>
-  
-  <div class="container mx-auto mb-10 px-4 flex flex-wrap justify-center items-center">
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <h1 class="text-3xl p-6 font-bold text-gray-800 tracking-wide leading-tight text-center">Blockchain Tech</h1>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/ethersjs.png" alt="Ethers js" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        Ethers js
-      </span>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/solidity-icon.png" alt="Solidity" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        Solidity
-      </span>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/hardhat.png" alt="Hardhat" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        Hardhat
-      </span>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/thirdweb.jpg" alt="Thirdweb" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        Thirdweb
-      </span>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/foundry-banner.png" alt="Foundry" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        Foundry
-      </span>
-    </div>
-    
-  </div>
-  
-  <div class="container mx-auto mb-10 px-4 flex flex-wrap justify-center items-center">
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <h1 class="text-3xl p-6 font-bold text-gray-800 tracking-wide leading-tight text-center">Frontend</h1>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/html.png" alt="HTML" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        HTML
-      </span>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/css.png" alt="CSS" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        CSS
-      </span>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/reactjs.png" alt="React js" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        React js
-      </span>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/nextjs-logo-square.png" alt="Next js" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        Next js
-      </span>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/tailwindcss.png" alt="Tailwind CSS" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        Tailwind CSS
-      </span>
-    </div>
-    
-  </div>
-  
-  <div class="container mx-auto mb-10 px-4 flex flex-wrap justify-center items-center">
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <h1 class="text-3xl p-6 font-bold text-gray-800 tracking-wide leading-tight text-center">DevOps</h1>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/docker.png" alt="Docker" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        Docker
-      </span>
-    </div>
-    
-  </div>
-  
-  <div class="container mx-auto mb-10 px-4 flex flex-wrap justify-center items-center">
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <h1 class="text-3xl p-6 font-bold text-gray-800 tracking-wide leading-tight text-center">Web Backend</h1>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/nodejs.jpg" alt="Node js" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        Node js
-      </span>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/expressjs.png" alt="Express js" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        Express js
-      </span>
-    </div>
-    
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/Django.png" alt="Django" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        Django
-      </span>
-    </div>
-    
-  </div>
-  
-</section>
-  <section id="services" class="flex flex-col py-20 mt-6 bg-gray-400 rounded-2xl shadow-md hover:shadow-2xl shadow-slate-50">
-  <div class="container mx-auto mb-10 px-4 flex flex-wrap justify-center items-center">
-    <div class="flex flex-col text-center items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <h1 class="text-3xl p-6 font-bold text-gray-800 tracking-wide leading-tight">Services</h1>
-    </div>
-  </div>
-
-  
-  <div class="flex flex-col md:flex-row items-center mx-4 md:mx-16 bg-gradient-to-r from-gray-500 to-gray-950 rounded-lg p-8 shadow-xl hover:shadow-2xl shadow-black transform transition-all duration-300 hover:scale-105 mb-10">
+  <div class="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[1.4fr_1fr]">
     <div>
-      <img src="/static/images/smartcontract.png" alt="Service illustration" loading="lazy"
-           class="max-w-full h-auto rounded-lg shadow-lg hover:shadow-2xl shadow-sky-950 transform hover:scale-105 transition-all duration-300">
-    </div>
-    <div class="mt-4 text-center md:text-left">
-      <div class="inline-block bg-sky-950 text-white ml-2 px-2 py-2 rounded-md shadow-md hover:shadow-2xl shadow-black hover:-translate-y-1 transition-all duration-300">
-        <p class="font-semibold">I&#x27;m a smart contract specialist with expertise in Solidity, ERC721, ERC777, and ERC1155 smart contracts from OpenZeppelin. I have a deep understanding of Solidity&#x27;s core concepts and can integrate Chainlink for reliable solutions. Let&#x27;s turn your ideas into successful decentralized applications.</p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="flex flex-col md:flex-row items-center mx-4 md:mx-16 bg-gradient-to-r from-gray-500 to-gray-950 rounded-lg p-8 shadow-xl hover:shadow-2xl shadow-black transform transition-all duration-300 hover:scale-105 mb-10">
-    <div>
-      <img src="/static/images/web.png" alt="Service illustration" loading="lazy"
-           class="max-w-full h-auto rounded-lg shadow-lg hover:shadow-2xl shadow-sky-950 transform hover:scale-105 transition-all duration-300">
-    </div>
-    <div class="mt-4 text-center md:text-left">
-      <div class="inline-block bg-sky-950 text-white ml-2 px-2 py-2 rounded-md shadow-md hover:shadow-2xl shadow-black hover:-translate-y-1 transition-all duration-300">
-        <p class="font-semibold">I&#x27;m a full-stack web3 developer with expertise in NFT and real estate marketplaces. I stay updated with the latest web3 advancements to deliver cutting-edge applications. Let&#x27;s bring your ideas to life with exceptional web3 solutions.</p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="flex flex-col md:flex-row items-center mx-4 md:mx-16 bg-gradient-to-r from-gray-500 to-gray-950 rounded-lg p-8 shadow-xl hover:shadow-2xl shadow-black transform transition-all duration-300 hover:scale-105 mb-10">
-    <div>
-      <img src="/static/images/ethereum.jpeg" alt="Service illustration" loading="lazy"
-           class="max-w-full h-auto rounded-lg shadow-lg hover:shadow-2xl shadow-sky-950 transform hover:scale-105 transition-all duration-300">
-    </div>
-    <div class="mt-4 text-center md:text-left">
-      <div class="inline-block bg-sky-950 text-white ml-2 px-2 py-2 rounded-md shadow-md hover:shadow-2xl shadow-black hover:-translate-y-1 transition-all duration-300">
-        <p class="font-semibold">I&#x27;m a blockchain learner with strong expertise in Ethereum. Continuously learning and staying updated with new concepts, I offer valuable insights and innovative solutions tailored to your needs. Let&#x27;s harness the power of blockchain to drive your success.</p>
-      </div>
-    </div>
-  </div>
-  
-</section>
-  <section id="work" class="flex flex-col py-20 mt-6 bg-gray-400 rounded-2xl shadow-md hover:shadow-2xl shadow-slate-50">
-  <div class="container mx-auto mb-10 px-4 flex flex-wrap justify-center items-center">
-    <div class="flex flex-col text-center items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <h1 class="text-3xl p-6 font-bold text-gray-800 tracking-wide leading-tight">Projects</h1>
-    </div>
-  </div>
+      <span class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900 px-3 py-1 text-xs text-slate-300">
+        <i class="fa-solid fa-location-dot text-orange-400"></i> Dhaka, Bangladesh
+      </span>
 
-  <div class="grid gap-4 p-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-    
-    <div class="relative rounded-lg shadow-lg p-6 overflow-hidden">
-      <div class="absolute top-0 left-0 w-full h-full rounded-lg"
-           style="background-image: url('/static/images/userprofile.png'); background-size: cover; filter: blur(8px);"></div>
-      <div class="relative">
-        <div class="mb-4 group">
-          <img src="/static/images/userprofile.png" alt="BLockEstate" loading="lazy"
-               class="w-full h-auto rounded-lg shadow-lg object-cover transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
-        </div>
-        <h3 class="text-2xl font-bold mb-2 rounded-xs text-center bg-gray-400 text-black">BLockEstate</h3>
-        <p class="font-bold bg-gray-400 rounded-xs">Blockchain Based Real Estate Marketplace. A decentralized real estate marketplace on the Ethereum blockchain.</p>
+      <h1 class="mt-6 font-tektur text-4xl font-bold leading-tight text-white md:text-6xl">
+        Hi, I'm Md. Raisul Islam Rony<br>
+        <span class="text-orange-400">Rust &amp; Blockchain Engineer</span>
+      </h1>
 
-        <div class="flex flex-wrap gap-3 mt-3">
-          <a href="https://github.com/Ronnie-Ahmed/Blockchain-Based-Real-Estate-Marketplace" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            View on GitHub
-          </a>
-          
-        </div>
-      </div>
-    </div>
-    
-    <div class="relative rounded-lg shadow-lg p-6 overflow-hidden">
-      <div class="absolute top-0 left-0 w-full h-full rounded-lg"
-           style="background-image: url('/static/images/cinetube.png'); background-size: cover; filter: blur(8px);"></div>
-      <div class="relative">
-        <div class="mb-4 group">
-          <img src="/static/images/cinetube.png" alt="CineTube" loading="lazy"
-               class="w-full h-auto rounded-lg shadow-lg object-cover transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
-        </div>
-        <h3 class="text-2xl font-bold mb-2 rounded-xs text-center bg-gray-400 text-black">CineTube</h3>
-        <p class="font-bold bg-gray-400 rounded-xs">Give you information about movies</p>
+      <p class="mt-6 max-w-xl text-lg text-slate-400">
+        I build fast, reliable backend systems and smart contracts: from Axum APIs
+        backed by Postgres and Redis to Solidity and DeFi applications.
+      </p>
 
-        <div class="flex flex-wrap gap-3 mt-3">
-          <a href="https://github.com/Ronnie-Ahmed/CineTube" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            View on GitHub
-          </a>
-          
-        </div>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#work" class="rounded-md bg-orange-400 px-5 py-2.5 font-semibold text-slate-950 transition hover:bg-orange-300">View projects</a>
+        <a href="https://drive.google.com/file/d/1x8q9xqTImBE_OL0C6INSswzXML9QwXL1/view?usp=sharing"
+           target="_blank" rel="noopener noreferrer"
+           class="rounded-md border border-slate-600 px-5 py-2.5 font-semibold text-slate-200 transition hover:border-orange-400 hover:text-orange-400">Resume</a>
+        <a href="#contactme" class="rounded-md border border-slate-600 px-5 py-2.5 font-semibold text-slate-200 transition hover:border-orange-400 hover:text-orange-400">Contact</a>
       </div>
-    </div>
-    
-    <div class="relative rounded-lg shadow-lg p-6 overflow-hidden">
-      <div class="absolute top-0 left-0 w-full h-full rounded-lg"
-           style="background-image: url('/static/images/iteract.png'); background-size: cover; filter: blur(8px);"></div>
-      <div class="relative">
-        <div class="mb-4 group">
-          <img src="/static/images/iteract.png" alt="SmartContractify" loading="lazy"
-               class="w-full h-auto rounded-lg shadow-lg object-cover transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
-        </div>
-        <h3 class="text-2xl font-bold mb-2 rounded-xs text-center bg-gray-400 text-black">SmartContractify</h3>
-        <p class="font-bold bg-gray-400 rounded-xs">Simple web3 dapp to deploy smart contracts and interact with them.</p>
 
-        <div class="flex flex-wrap gap-3 mt-3">
-          <a href="https://github.com/Ronnie-Ahmed/Interact_with_SmartContract" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            View on GitHub
-          </a>
-          
-        </div>
+      <div class="mt-6 flex gap-5 text-2xl text-slate-400">
+        <a href="https://github.com/Ronnie-Ahmed" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="transition hover:text-orange-400"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/md-raisul-islam-rony-a059a7291/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="transition hover:text-orange-400"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://wa.link/ur2yll" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="transition hover:text-orange-400"><i class="fa-brands fa-whatsapp"></i></a>
       </div>
-    </div>
-    
-    <div class="relative rounded-lg shadow-lg p-6 overflow-hidden">
-      <div class="absolute top-0 left-0 w-full h-full rounded-lg"
-           style="background-image: url('/static/images/nftmarket.png'); background-size: cover; filter: blur(8px);"></div>
-      <div class="relative">
-        <div class="mb-4 group">
-          <img src="/static/images/nftmarket.png" alt="NFTMarketPlace" loading="lazy"
-               class="w-full h-auto rounded-lg shadow-lg object-cover transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
-        </div>
-        <h3 class="text-2xl font-bold mb-2 rounded-xs text-center bg-gray-400 text-black">NFTMarketPlace</h3>
-        <p class="font-bold bg-gray-400 rounded-xs">NFT Marketplace is a platform that facilitates the buying, selling, and trading of non-fungible tokens (NFTs).</p>
 
-        <div class="flex flex-wrap gap-3 mt-3">
-          <a href="https://github.com/Ronnie-Ahmed/NFTMARKETPLACE" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            View on GitHub
-          </a>
-          
-          <a href="https://nftmarketplace-igfftl5e3-ronnie-ahmed.vercel.app/" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            Live
-          </a>
-          
+      <dl class="mt-10 grid max-w-md grid-cols-3 gap-4">
+        
+        <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-4">
+          <dt class="font-tektur text-2xl font-bold text-white">2+</dt>
+          <dd class="mt-1 text-xs text-slate-400">Years in blockchain</dd>
         </div>
-      </div>
+        
+        <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-4">
+          <dt class="font-tektur text-2xl font-bold text-white">3</dt>
+          <dd class="mt-1 text-xs text-slate-400">Companies</dd>
+        </div>
+        
+        <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-4">
+          <dt class="font-tektur text-2xl font-bold text-white">10s</dt>
+          <dd class="mt-1 text-xs text-slate-400">Projects</dd>
+        </div>
+        
+      </dl>
     </div>
-    
-    <div class="relative rounded-lg shadow-lg p-6 overflow-hidden">
-      <div class="absolute top-0 left-0 w-full h-full rounded-lg"
-           style="background-image: url('/static/images/LibraryHome.png'); background-size: cover; filter: blur(8px);"></div>
-      <div class="relative">
-        <div class="mb-4 group">
-          <img src="/static/images/LibraryHome.png" alt="LibraryNFT" loading="lazy"
-               class="w-full h-auto rounded-lg shadow-lg object-cover transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
-        </div>
-        <h3 class="text-2xl font-bold mb-2 rounded-xs text-center bg-gray-400 text-black">LibraryNFT</h3>
-        <p class="font-bold bg-gray-400 rounded-xs">LibraryNFT allows users to store their favorite books as Non-Fungible Tokens (NFTs) on the blockchain using Solidity, making them accessible to others in exchange for an access price set by the book owner.</p>
 
-        <div class="flex flex-wrap gap-3 mt-3">
-          <a href="https://github.com/Ronnie-Ahmed/LibraryNFT" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            View on GitHub
-          </a>
-          
-          <a href="https://library-nft.vercel.app/" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            Live
-          </a>
-          
-        </div>
-      </div>
+    <div class="mx-auto w-64 md:w-full md:max-w-xs">
+      <img src="/static/images/Raisul_Photo.png" alt="Portrait of Md. Raisul Islam Rony"
+           class="aspect-square w-full rounded-2xl object-cover ring-2 ring-orange-400/60 ring-offset-4 ring-offset-slate-950">
     </div>
-    
-    <div class="relative rounded-lg shadow-lg p-6 overflow-hidden">
-      <div class="absolute top-0 left-0 w-full h-full rounded-lg"
-           style="background-image: url('/static/images/DaoHomepage.png'); background-size: cover; filter: blur(8px);"></div>
-      <div class="relative">
-        <div class="mb-4 group">
-          <img src="/static/images/DaoHomepage.png" alt="🐧 🐧 DAO 🐧🐧" loading="lazy"
-               class="w-full h-auto rounded-lg shadow-lg object-cover transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
-        </div>
-        <h3 class="text-2xl font-bold mb-2 rounded-xs text-center bg-gray-400 text-black">🐧 🐧 DAO 🐧🐧</h3>
-        <p class="font-bold bg-gray-400 rounded-xs">Propose game-changing ideas and watch them transform into reality. Prepare for voting as proposals gain momentum, and then cast your vote with just a few clicks. Vote for, against, or abstain—your decision counts! 💪</p>
-
-        <div class="flex flex-wrap gap-3 mt-3">
-          <a href="https://github.com/Ronnie-Ahmed/DAO" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            View on GitHub
-          </a>
-          
-          <a href="https://dao-ronnie-ahmed.vercel.app/" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            Live
-          </a>
-          
-        </div>
-      </div>
-    </div>
-    
-    <div class="relative rounded-lg shadow-lg p-6 overflow-hidden">
-      <div class="absolute top-0 left-0 w-full h-full rounded-lg"
-           style="background-image: url('/static/images/LotteryHome.png'); background-size: cover; filter: blur(8px);"></div>
-      <div class="relative">
-        <div class="mb-4 group">
-          <img src="/static/images/LotteryHome.png" alt="🎰💸🍀 Lottery 🎯🏆🤞" loading="lazy"
-               class="w-full h-auto rounded-lg shadow-lg object-cover transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
-        </div>
-        <h3 class="text-2xl font-bold mb-2 rounded-xs text-center bg-gray-400 text-black">🎰💸🍀 Lottery 🎯🏆🤞</h3>
-        <p class="font-bold bg-gray-400 rounded-xs">The Decentralized Lottery Dapp is an innovative project that leverages blockchain technology to bring the excitement of lotteries to the Ethereum network.🌐💰</p>
-
-        <div class="flex flex-wrap gap-3 mt-3">
-          <a href="https://github.com/Ronnie-Ahmed/Lottery" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            View on GitHub
-          </a>
-          
-          <a href="https://lottery-eight-woad.vercel.app/" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            Live
-          </a>
-          
-        </div>
-      </div>
-    </div>
-    
-    <div class="relative rounded-lg shadow-lg p-6 overflow-hidden">
-      <div class="absolute top-0 left-0 w-full h-full rounded-lg"
-           style="background-image: url('/static/images/testnet.png'); background-size: cover; filter: blur(8px);"></div>
-      <div class="relative">
-        <div class="mb-4 group">
-          <img src="/static/images/testnet.png" alt="🔄 Token Swap Web3 Dapp 🌐" loading="lazy"
-               class="w-full h-auto rounded-lg shadow-lg object-cover transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
-        </div>
-        <h3 class="text-2xl font-bold mb-2 rounded-xs text-center bg-gray-400 text-black">🔄 Token Swap Web3 Dapp 🌐</h3>
-        <p class="font-bold bg-gray-400 rounded-xs">Welcome to the Token Swap Web3 Dapp! This decentralized application (Dapp) allows users to exchange mainnet tokens and interact with custom-built ERC20 tokens on the testnet. It also offers features such as creating liquidity pools, adding liquidity, and obtaining free testnet tokens. 🔄</p>
-
-        <div class="flex flex-wrap gap-3 mt-3">
-          <a href="https://github.com/Ronnie-Ahmed/Token_Swap" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            View on GitHub
-          </a>
-          
-          <a href="https://token-swap-orcin.vercel.app/" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            Live
-          </a>
-          
-        </div>
-      </div>
-    </div>
-    
-    <div class="relative rounded-lg shadow-lg p-6 overflow-hidden">
-      <div class="absolute top-0 left-0 w-full h-full rounded-lg"
-           style="background-image: url('/static/images/first.png'); background-size: cover; filter: blur(8px);"></div>
-      <div class="relative">
-        <div class="mb-4 group">
-          <img src="/static/images/first.png" alt="Car-Rental" loading="lazy"
-               class="w-full h-auto rounded-lg shadow-lg object-cover transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
-        </div>
-        <h3 class="text-2xl font-bold mb-2 rounded-xs text-center bg-gray-400 text-black">Car-Rental</h3>
-        <p class="font-bold bg-gray-400 rounded-xs">A place for you to get cars</p>
-
-        <div class="flex flex-wrap gap-3 mt-3">
-          <a href="https://github.com/Ronnie-Ahmed/car-rental" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            View on GitHub
-          </a>
-          
-          <a href="https://car-rental-gray-five.vercel.app/" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            Live
-          </a>
-          
-        </div>
-      </div>
-    </div>
-    
-    <div class="relative rounded-lg shadow-lg p-6 overflow-hidden">
-      <div class="absolute top-0 left-0 w-full h-full rounded-lg"
-           style="background-image: url('/static/images/Login_Page.png'); background-size: cover; filter: blur(8px);"></div>
-      <div class="relative">
-        <div class="mb-4 group">
-          <img src="/static/images/Login_Page.png" alt="Task Manager (Python Django)" loading="lazy"
-               class="w-full h-auto rounded-lg shadow-lg object-cover transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
-        </div>
-        <h3 class="text-2xl font-bold mb-2 rounded-xs text-center bg-gray-400 text-black">Task Manager (Python Django)</h3>
-        <p class="font-bold bg-gray-400 rounded-xs">Python Django Project for Mediusware Written Exam</p>
-
-        <div class="flex flex-wrap gap-3 mt-3">
-          <a href="https://github.com/Ronnie-Ahmed/Task_manager/tree/dev.0.0.1" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            View on GitHub
-          </a>
-          
-        </div>
-      </div>
-    </div>
-    
   </div>
 </section>
-  <section id="contactme" class="py-20 mt-6 mb-6 bg-gray-400 rounded-2xl shadow-md hover:shadow-2xl shadow-slate-50">
-  <div class="container mx-auto px-4 py-16 rounded-lg shadow-2xl shadow-black bg-gradient-to-r from-gray-500 via-gray-300 to-gray-800">
-    <div class="container mx-auto mb-10 px-4 flex flex-wrap justify-center items-center">
-      <div class="flex flex-col text-center items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-        <h1 class="text-3xl p-6 font-bold text-gray-800 tracking-wide leading-tight">Contact Me</h1>
+  <section id="skills" class="mx-auto max-w-6xl scroll-mt-20 px-6 py-20">
+  <div class="mb-10">
+    <p class="text-sm font-semibold uppercase tracking-widest text-orange-400">Skills</p>
+    <h2 class="mt-2 font-tektur text-3xl font-bold text-white md:text-4xl">Tools I work with</h2>
+  </div>
+
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    
+    <div class="reveal rounded-xl border border-slate-800 bg-slate-900/60 p-6">
+      <h3 class="font-tektur text-lg font-semibold text-white">Blockchain Infrastructure</h3>
+      <div class="mt-4 flex flex-wrap gap-2">
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/rust.png" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          Rust
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          Substrate
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          Polkadot SDK
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          FRAME Pallets
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          Runtime Development
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          Layer 1
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          EVM Compatibility
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          Tokenomics
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          Cross-chain Interoperability
+        </span>
+        
       </div>
     </div>
+    
+    <div class="reveal rounded-xl border border-slate-800 bg-slate-900/60 p-6">
+      <h3 class="font-tektur text-lg font-semibold text-white">Smart Contracts &amp; Web3</h3>
+      <div class="mt-4 flex flex-wrap gap-2">
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/solidity-icon.png" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          Solidity
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/foundry-banner.png" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          Foundry
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/hardhat.png" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          Hardhat
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/ethersjs.png" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          Ethers.js
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/thirdweb.jpg" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          Thirdweb
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          Gas Optimization
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          DeFi
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          NFTs
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          Web3.js
+        </span>
+        
+      </div>
+    </div>
+    
+    <div class="reveal rounded-xl border border-slate-800 bg-slate-900/60 p-6">
+      <h3 class="font-tektur text-lg font-semibold text-white">Rust Backend</h3>
+      <div class="mt-4 flex flex-wrap gap-2">
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          Axum
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          actix
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          Tokio
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          sqlx
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          PostgreSQL
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          Redis
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          REST APIs
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          WebSockets
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          Distributed Systems
+        </span>
+        
+      </div>
+    </div>
+    
+    <div class="reveal rounded-xl border border-slate-800 bg-slate-900/60 p-6">
+      <h3 class="font-tektur text-lg font-semibold text-white">Languages</h3>
+      <div class="mt-4 flex flex-wrap gap-2">
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/rust.png" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          Rust
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/Python-logo-notext.svg.png" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          Python
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/java-script.png" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          JavaScript
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/solidity-icon.png" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          Solidity
+        </span>
+        
+      </div>
+    </div>
+    
+    <div class="reveal rounded-xl border border-slate-800 bg-slate-900/60 p-6">
+      <h3 class="font-tektur text-lg font-semibold text-white">Frontend</h3>
+      <div class="mt-4 flex flex-wrap gap-2">
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/html.png" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          HTML
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/css.png" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          CSS
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/reactjs.png" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          React
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/nextjs-logo-square.png" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          Next.js
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/tailwindcss.png" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          Tailwind CSS
+        </span>
+        
+      </div>
+    </div>
+    
+    <div class="reveal rounded-xl border border-slate-800 bg-slate-900/60 p-6">
+      <h3 class="font-tektur text-lg font-semibold text-white">Backend (other)</h3>
+      <div class="mt-4 flex flex-wrap gap-2">
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/nodejs.jpg" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          Node.js
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/expressjs.png" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          Express
+        </span>
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/Django.png" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          Django
+        </span>
+        
+      </div>
+    </div>
+    
+    <div class="reveal rounded-xl border border-slate-800 bg-slate-900/60 p-6">
+      <h3 class="font-tektur text-lg font-semibold text-white">DevOps</h3>
+      <div class="mt-4 flex flex-wrap gap-2">
+        
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          
+          <img src="/static/images/docker.png" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          
+          Docker
+        </span>
+        
+      </div>
+    </div>
+    
+  </div>
+</section>
+  <section id="services" class="mx-auto max-w-6xl scroll-mt-20 px-6 py-20">
+  <div class="mb-10">
+    <p class="text-sm font-semibold uppercase tracking-widest text-orange-400">What I do</p>
+    <h2 class="mt-2 font-tektur text-3xl font-bold text-white md:text-4xl">How I can help</h2>
+  </div>
 
-    <form id="contact-form" class="max-w-md mx-auto">
-      <div class="mb-6">
-        <label for="name" class="block mb-2 text-lg font-medium text-gray-800">Name</label>
-        <input type="text" id="name" name="name" required
-               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 text-gray-800">
+  <div class="grid gap-6 md:grid-cols-3">
+    
+    <div class="reveal rounded-xl border border-slate-800 bg-slate-900/60 p-6 transition hover:-translate-y-1 hover:border-orange-400/50">
+      <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-400/10 text-xl text-orange-400">
+        <i class="fa-solid fa-cubes"></i>
       </div>
-      <div class="mb-6">
-        <label for="email" class="block mb-2 text-lg font-medium text-gray-800">Email</label>
-        <input type="email" id="email" name="email" required
-               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 text-gray-800">
+      <h3 class="mt-4 text-lg font-semibold text-white">Blockchain Infrastructure</h3>
+      <p class="mt-2 text-sm text-slate-400">Substrate runtimes and custom FRAME pallets, Layer 1 chains, EVM compatibility, tokenomics and cross-chain interoperability, built in Rust.</p>
+    </div>
+    
+    <div class="reveal rounded-xl border border-slate-800 bg-slate-900/60 p-6 transition hover:-translate-y-1 hover:border-orange-400/50">
+      <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-400/10 text-xl text-orange-400">
+        <i class="fa-solid fa-server"></i>
       </div>
-      <div class="mb-6">
-        <label for="subject" class="block mb-2 text-lg font-medium text-gray-800">Subject</label>
-        <input type="text" id="subject" name="subject" required
-               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 text-gray-800">
+      <h3 class="mt-4 text-lg font-semibold text-white">Backend &amp; API Development</h3>
+      <p class="mt-2 text-sm text-slate-400">Fast, reliable REST and real-time APIs in Rust with Axum, backed by Postgres and Redis, with attention to authentication, concurrency and data integrity.</p>
+    </div>
+    
+    <div class="reveal rounded-xl border border-slate-800 bg-slate-900/60 p-6 transition hover:-translate-y-1 hover:border-orange-400/50">
+      <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-400/10 text-xl text-orange-400">
+        <i class="fa-solid fa-file-contract"></i>
       </div>
-      <div class="mb-6">
-        <label for="message" class="block mb-2 text-lg font-medium text-gray-800">Message</label>
-        <textarea id="message" name="message" rows="4" required
-                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 text-gray-800"></textarea>
+      <h3 class="mt-4 text-lg font-semibold text-white">Smart Contracts</h3>
+      <p class="mt-2 text-sm text-slate-400">Solidity contracts built on OpenZeppelin standards (ERC-721, ERC-777, ERC-1155), tested with Foundry or Hardhat, with Chainlink integrations where needed.</p>
+    </div>
+    
+    <div class="reveal rounded-xl border border-slate-800 bg-slate-900/60 p-6 transition hover:-translate-y-1 hover:border-orange-400/50">
+      <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-400/10 text-xl text-orange-400">
+        <i class="fa-brands fa-ethereum"></i>
       </div>
-      <button type="submit"
-              class="px-6 py-3 bg-blue-500 text-white font-bold rounded-md hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl">
-        Send Email
+      <h3 class="mt-4 text-lg font-semibold text-white">Web3 &amp; DeFi Applications</h3>
+      <p class="mt-2 text-sm text-slate-400">End-to-end dApps such as NFT and real-estate marketplaces, token swaps and DAOs, from the contract layer to the user interface.</p>
+    </div>
+    
+  </div>
+</section>
+  <section id="work" class="mx-auto max-w-6xl scroll-mt-20 px-6 py-20">
+  <div class="mb-8">
+    <p class="text-sm font-semibold uppercase tracking-widest text-orange-400">Projects</p>
+    <h2 class="mt-2 font-tektur text-3xl font-bold text-white md:text-4xl">Things I've built</h2>
+  </div>
+
+  <div class="mb-8 flex flex-wrap gap-2">
+    <button data-filter="all" aria-pressed="true" class="rounded-full border border-slate-700 px-4 py-1.5 text-sm transition hover:border-orange-400 aria-pressed:border-orange-400 aria-pressed:bg-orange-400 aria-pressed:text-slate-950">All</button>
+    <button data-filter="professional" aria-pressed="false" class="rounded-full border border-slate-700 px-4 py-1.5 text-sm transition hover:border-orange-400 aria-pressed:border-orange-400 aria-pressed:bg-orange-400 aria-pressed:text-slate-950">Professional</button>
+    <button data-filter="rust" aria-pressed="false" class="rounded-full border border-slate-700 px-4 py-1.5 text-sm transition hover:border-orange-400 aria-pressed:border-orange-400 aria-pressed:bg-orange-400 aria-pressed:text-slate-950">Rust</button>
+    <button data-filter="blockchain" aria-pressed="false" class="rounded-full border border-slate-700 px-4 py-1.5 text-sm transition hover:border-orange-400 aria-pressed:border-orange-400 aria-pressed:bg-orange-400 aria-pressed:text-slate-950">Blockchain</button>
+    <button data-filter="web" aria-pressed="false" class="rounded-full border border-slate-700 px-4 py-1.5 text-sm transition hover:border-orange-400 aria-pressed:border-orange-400 aria-pressed:bg-orange-400 aria-pressed:text-slate-950">Web</button>
+  </div>
+
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    
+    <article data-cat="professional rust blockchain"
+             class="reveal group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 transition hover:-translate-y-1 hover:border-orange-400/50">
+      
+      <div class="flex aspect-video items-center justify-center bg-linear-to-br from-orange-500/20 via-slate-800 to-slate-900">
+        <span class="font-tektur text-4xl text-orange-400">&lt;/&gt;</span>
+      </div>
+      
+
+      <div class="flex flex-1 flex-col p-5">
+        
+        <span class="mb-2 inline-flex w-fit items-center gap-1 rounded-full bg-orange-400/10 px-2.5 py-0.5 text-xs font-semibold text-orange-400">
+          <i class="fa-solid fa-briefcase"></i> Professional work
+        </span>
+        
+
+        <h3 class="font-semibold text-white">Argochain: Substrate Layer 1 Blockchain</h3>
+        <p class="mt-2 text-sm text-slate-400">Contributed to a Substrate-based Layer 1 blockchain with EVM compatibility. Designed and implemented parts of the tokenomics, runtime upgrades, token-burn mechanism and dead-address functionality. Reviewed the Hacken security audit findings and helped resolve the identified vulnerabilities, including critical issues.</p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Rust</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Substrate</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Polkadot SDK</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">EVM</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Solidity</span>
+          
+        </div>
+
+        <div class="mt-auto flex flex-wrap items-center gap-5 pt-5 text-sm font-semibold">
+          
+          
+          
+          <span class="text-xs font-normal text-slate-500"><i class="fa-solid fa-lock mr-1"></i>Private repository</span>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article data-cat="professional rust blockchain"
+             class="reveal group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 transition hover:-translate-y-1 hover:border-orange-400/50">
+      
+      <div class="flex aspect-video items-center justify-center bg-linear-to-br from-orange-500/20 via-slate-800 to-slate-900">
+        <span class="font-tektur text-4xl text-orange-400">&lt;/&gt;</span>
+      </div>
+      
+
+      <div class="flex flex-1 flex-col p-5">
+        
+        <span class="mb-2 inline-flex w-fit items-center gap-1 rounded-full bg-orange-400/10 px-2.5 py-0.5 text-xs font-semibold text-orange-400">
+          <i class="fa-solid fa-briefcase"></i> Professional work
+        </span>
+        
+
+        <h3 class="font-semibold text-white">Cyborg Parachain</h3>
+        <p class="mt-2 text-sm text-slate-400">Substrate parachain for a privacy-focused decentralized platform that runs AI workloads. Designed and implemented a custom payment pallet supporting multiple payment models and a miner-reward pallet with native-token and fiat-based rewards, plus on-chain verification of off-chain AI inference via NVIDIA Triton.</p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Rust</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Substrate</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">FRAME pallets</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">NVIDIA Triton</span>
+          
+        </div>
+
+        <div class="mt-auto flex flex-wrap items-center gap-5 pt-5 text-sm font-semibold">
+          
+          <a href="https://github.com/Cyborg-Network/cyborg-parachain" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-brands fa-github mr-1"></i>Code
+          </a>
+          
+          
+          
+        </div>
+      </div>
+    </article>
+    
+    <article data-cat="professional rust blockchain"
+             class="reveal group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 transition hover:-translate-y-1 hover:border-orange-400/50">
+      
+      <div class="flex aspect-video items-center justify-center bg-linear-to-br from-orange-500/20 via-slate-800 to-slate-900">
+        <span class="font-tektur text-4xl text-orange-400">&lt;/&gt;</span>
+      </div>
+      
+
+      <div class="flex flex-1 flex-col p-5">
+        
+        <span class="mb-2 inline-flex w-fit items-center gap-1 rounded-full bg-orange-400/10 px-2.5 py-0.5 text-xs font-semibold text-orange-400">
+          <i class="fa-solid fa-briefcase"></i> Professional work
+        </span>
+        
+
+        <h3 class="font-semibold text-white">Cyborg Miner</h3>
+        <p class="mt-2 text-sm text-slate-400">Worker node for the Cyborg distributed AI network. Integrates blockchain runtime interfaces with distributed compute workers, and adds OP-TEE-based hardware device identification to strengthen device trust and prevent spoofing.</p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Rust</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Substrate</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">OP-TEE</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Distributed systems</span>
+          
+        </div>
+
+        <div class="mt-auto flex flex-wrap items-center gap-5 pt-5 text-sm font-semibold">
+          
+          <a href="https://github.com/Cyborg-Network/Cyborg-miner" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-brands fa-github mr-1"></i>Code
+          </a>
+          
+          
+          
+        </div>
+      </div>
+    </article>
+    
+    <article data-cat="rust"
+             class="reveal group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 transition hover:-translate-y-1 hover:border-orange-400/50">
+      
+      <div class="flex aspect-video items-center justify-center bg-linear-to-br from-orange-500/20 via-slate-800 to-slate-900">
+        <span class="font-tektur text-4xl text-orange-400">&lt;/&gt;</span>
+      </div>
+      
+
+      <div class="flex flex-1 flex-col p-5">
+        
+
+        <h3 class="font-semibold text-white">Crypto Watchlist &amp; Price Alert API</h3>
+        <p class="mt-2 text-sm text-slate-400">REST API with JWT auth, Postgres-backed watchlists, live CoinGecko prices and price alerts.</p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Rust</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Axum</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Postgres</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">JWT</span>
+          
+        </div>
+
+        <div class="mt-auto flex flex-wrap items-center gap-5 pt-5 text-sm font-semibold">
+          
+          <a href="https://github.com/Ronnie-Ahmed/RustVault/tree/main/crypto_watchlist" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-brands fa-github mr-1"></i>Code
+          </a>
+          
+          
+          
+        </div>
+      </div>
+    </article>
+    
+    <article data-cat="rust"
+             class="reveal group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 transition hover:-translate-y-1 hover:border-orange-400/50">
+      
+      <div class="flex aspect-video items-center justify-center bg-linear-to-br from-orange-500/20 via-slate-800 to-slate-900">
+        <span class="font-tektur text-4xl text-orange-400">&lt;/&gt;</span>
+      </div>
+      
+
+      <div class="flex flex-1 flex-col p-5">
+        
+
+        <h3 class="font-semibold text-white">Banking System API</h3>
+        <p class="mt-2 text-sm text-slate-400">Atomic money transfers using database transactions and row-level locking to stay correct under concurrent requests.</p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Rust</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Axum</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">sqlx</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Postgres</span>
+          
+        </div>
+
+        <div class="mt-auto flex flex-wrap items-center gap-5 pt-5 text-sm font-semibold">
+          
+          <a href="https://github.com/Ronnie-Ahmed/RustVault/tree/main/Banking_System" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-brands fa-github mr-1"></i>Code
+          </a>
+          
+          
+          
+        </div>
+      </div>
+    </article>
+    
+    <article data-cat="rust"
+             class="reveal group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 transition hover:-translate-y-1 hover:border-orange-400/50">
+      
+      <div class="flex aspect-video items-center justify-center bg-linear-to-br from-orange-500/20 via-slate-800 to-slate-900">
+        <span class="font-tektur text-4xl text-orange-400">&lt;/&gt;</span>
+      </div>
+      
+
+      <div class="flex flex-1 flex-col p-5">
+        
+
+        <h3 class="font-semibold text-white">Real-time WebSocket Chat</h3>
+        <p class="mt-2 text-sm text-slate-400">Chat server with a global room and message history persisted to Postgres.</p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Rust</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Axum</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">WebSockets</span>
+          
+        </div>
+
+        <div class="mt-auto flex flex-wrap items-center gap-5 pt-5 text-sm font-semibold">
+          
+          <a href="https://github.com/Ronnie-Ahmed/RustVault/tree/main/chat_server" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-brands fa-github mr-1"></i>Code
+          </a>
+          
+          
+          
+        </div>
+      </div>
+    </article>
+    
+    <article data-cat="blockchain"
+             class="reveal group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 transition hover:-translate-y-1 hover:border-orange-400/50">
+      
+      <div class="aspect-video overflow-hidden bg-slate-800">
+        <img src="/static/images/userprofile.png" alt="BlockEstate screenshot" loading="lazy"
+             class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
+      </div>
+      
+
+      <div class="flex flex-1 flex-col p-5">
+        
+
+        <h3 class="font-semibold text-white">BlockEstate</h3>
+        <p class="mt-2 text-sm text-slate-400">Decentralized real estate marketplace on the Ethereum blockchain.</p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Solidity</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Ethereum</span>
+          
+        </div>
+
+        <div class="mt-auto flex flex-wrap items-center gap-5 pt-5 text-sm font-semibold">
+          
+          <a href="https://github.com/Ronnie-Ahmed/Blockchain-Based-Real-Estate-Marketplace" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-brands fa-github mr-1"></i>Code
+          </a>
+          
+          
+          
+        </div>
+      </div>
+    </article>
+    
+    <article data-cat="blockchain"
+             class="reveal group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 transition hover:-translate-y-1 hover:border-orange-400/50">
+      
+      <div class="aspect-video overflow-hidden bg-slate-800">
+        <img src="/static/images/nftmarket.png" alt="NFT Marketplace screenshot" loading="lazy"
+             class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
+      </div>
+      
+
+      <div class="flex flex-1 flex-col p-5">
+        
+
+        <h3 class="font-semibold text-white">NFT Marketplace</h3>
+        <p class="mt-2 text-sm text-slate-400">Platform for buying, selling and trading non-fungible tokens.</p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Solidity</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">NFT</span>
+          
+        </div>
+
+        <div class="mt-auto flex flex-wrap items-center gap-5 pt-5 text-sm font-semibold">
+          
+          <a href="https://github.com/Ronnie-Ahmed/NFTMARKETPLACE" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-brands fa-github mr-1"></i>Code
+          </a>
+          
+          
+          <a href="https://nftmarketplace-igfftl5e3-ronnie-ahmed.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>Live demo
+          </a>
+          
+          
+        </div>
+      </div>
+    </article>
+    
+    <article data-cat="blockchain"
+             class="reveal group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 transition hover:-translate-y-1 hover:border-orange-400/50">
+      
+      <div class="aspect-video overflow-hidden bg-slate-800">
+        <img src="/static/images/LibraryHome.png" alt="LibraryNFT screenshot" loading="lazy"
+             class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
+      </div>
+      
+
+      <div class="flex flex-1 flex-col p-5">
+        
+
+        <h3 class="font-semibold text-white">LibraryNFT</h3>
+        <p class="mt-2 text-sm text-slate-400">Store favorite books as NFTs and let others access them for a price set by the owner.</p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Solidity</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">NFT</span>
+          
+        </div>
+
+        <div class="mt-auto flex flex-wrap items-center gap-5 pt-5 text-sm font-semibold">
+          
+          <a href="https://github.com/Ronnie-Ahmed/LibraryNFT" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-brands fa-github mr-1"></i>Code
+          </a>
+          
+          
+          <a href="https://library-nft.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>Live demo
+          </a>
+          
+          
+        </div>
+      </div>
+    </article>
+    
+    <article data-cat="blockchain"
+             class="reveal group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 transition hover:-translate-y-1 hover:border-orange-400/50">
+      
+      <div class="aspect-video overflow-hidden bg-slate-800">
+        <img src="/static/images/DaoHomepage.png" alt="DAO screenshot" loading="lazy"
+             class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
+      </div>
+      
+
+      <div class="flex flex-1 flex-col p-5">
+        
+
+        <h3 class="font-semibold text-white">DAO</h3>
+        <p class="mt-2 text-sm text-slate-400">Create proposals, vote for, against or abstain, and watch ideas turn into decisions.</p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Solidity</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Governance</span>
+          
+        </div>
+
+        <div class="mt-auto flex flex-wrap items-center gap-5 pt-5 text-sm font-semibold">
+          
+          <a href="https://github.com/Ronnie-Ahmed/DAO" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-brands fa-github mr-1"></i>Code
+          </a>
+          
+          
+          <a href="https://dao-ronnie-ahmed.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>Live demo
+          </a>
+          
+          
+        </div>
+      </div>
+    </article>
+    
+    <article data-cat="blockchain"
+             class="reveal group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 transition hover:-translate-y-1 hover:border-orange-400/50">
+      
+      <div class="aspect-video overflow-hidden bg-slate-800">
+        <img src="/static/images/LotteryHome.png" alt="Decentralized Lottery screenshot" loading="lazy"
+             class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
+      </div>
+      
+
+      <div class="flex flex-1 flex-col p-5">
+        
+
+        <h3 class="font-semibold text-white">Decentralized Lottery</h3>
+        <p class="mt-2 text-sm text-slate-400">Lottery dapp that brings provably fair draws to the Ethereum network.</p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Solidity</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Ethereum</span>
+          
+        </div>
+
+        <div class="mt-auto flex flex-wrap items-center gap-5 pt-5 text-sm font-semibold">
+          
+          <a href="https://github.com/Ronnie-Ahmed/Lottery" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-brands fa-github mr-1"></i>Code
+          </a>
+          
+          
+          <a href="https://lottery-eight-woad.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>Live demo
+          </a>
+          
+          
+        </div>
+      </div>
+    </article>
+    
+    <article data-cat="blockchain"
+             class="reveal group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 transition hover:-translate-y-1 hover:border-orange-400/50">
+      
+      <div class="aspect-video overflow-hidden bg-slate-800">
+        <img src="/static/images/testnet.png" alt="Token Swap screenshot" loading="lazy"
+             class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
+      </div>
+      
+
+      <div class="flex flex-1 flex-col p-5">
+        
+
+        <h3 class="font-semibold text-white">Token Swap</h3>
+        <p class="mt-2 text-sm text-slate-400">Swap mainnet tokens, use custom ERC20 tokens on testnet, create liquidity pools and add liquidity.</p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Solidity</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">ERC20</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">DeFi</span>
+          
+        </div>
+
+        <div class="mt-auto flex flex-wrap items-center gap-5 pt-5 text-sm font-semibold">
+          
+          <a href="https://github.com/Ronnie-Ahmed/Token_Swap" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-brands fa-github mr-1"></i>Code
+          </a>
+          
+          
+          <a href="https://token-swap-orcin.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>Live demo
+          </a>
+          
+          
+        </div>
+      </div>
+    </article>
+    
+    <article data-cat="blockchain"
+             class="reveal group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 transition hover:-translate-y-1 hover:border-orange-400/50">
+      
+      <div class="aspect-video overflow-hidden bg-slate-800">
+        <img src="/static/images/iteract.png" alt="SmartContractify screenshot" loading="lazy"
+             class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
+      </div>
+      
+
+      <div class="flex flex-1 flex-col p-5">
+        
+
+        <h3 class="font-semibold text-white">SmartContractify</h3>
+        <p class="mt-2 text-sm text-slate-400">Web3 dapp to deploy smart contracts and interact with them.</p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Solidity</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Web3</span>
+          
+        </div>
+
+        <div class="mt-auto flex flex-wrap items-center gap-5 pt-5 text-sm font-semibold">
+          
+          <a href="https://github.com/Ronnie-Ahmed/Interact_with_SmartContract" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-brands fa-github mr-1"></i>Code
+          </a>
+          
+          
+          
+        </div>
+      </div>
+    </article>
+    
+    <article data-cat="web"
+             class="reveal group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 transition hover:-translate-y-1 hover:border-orange-400/50">
+      
+      <div class="aspect-video overflow-hidden bg-slate-800">
+        <img src="/static/images/first.png" alt="Car Rental screenshot" loading="lazy"
+             class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
+      </div>
+      
+
+      <div class="flex flex-1 flex-col p-5">
+        
+
+        <h3 class="font-semibold text-white">Car Rental</h3>
+        <p class="mt-2 text-sm text-slate-400">Car rental web application.</p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          
+        </div>
+
+        <div class="mt-auto flex flex-wrap items-center gap-5 pt-5 text-sm font-semibold">
+          
+          <a href="https://github.com/Ronnie-Ahmed/car-rental" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-brands fa-github mr-1"></i>Code
+          </a>
+          
+          
+          <a href="https://car-rental-gray-five.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>Live demo
+          </a>
+          
+          
+        </div>
+      </div>
+    </article>
+    
+    <article data-cat="web"
+             class="reveal group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 transition hover:-translate-y-1 hover:border-orange-400/50">
+      
+      <div class="aspect-video overflow-hidden bg-slate-800">
+        <img src="/static/images/cinetube.png" alt="CineTube screenshot" loading="lazy"
+             class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
+      </div>
+      
+
+      <div class="flex flex-1 flex-col p-5">
+        
+
+        <h3 class="font-semibold text-white">CineTube</h3>
+        <p class="mt-2 text-sm text-slate-400">Movie information app.</p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          
+        </div>
+
+        <div class="mt-auto flex flex-wrap items-center gap-5 pt-5 text-sm font-semibold">
+          
+          <a href="https://github.com/Ronnie-Ahmed/CineTube" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-brands fa-github mr-1"></i>Code
+          </a>
+          
+          
+          
+        </div>
+      </div>
+    </article>
+    
+    <article data-cat="web"
+             class="reveal group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 transition hover:-translate-y-1 hover:border-orange-400/50">
+      
+      <div class="aspect-video overflow-hidden bg-slate-800">
+        <img src="/static/images/Login_Page.png" alt="Task Manager screenshot" loading="lazy"
+             class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
+      </div>
+      
+
+      <div class="flex flex-1 flex-col p-5">
+        
+
+        <h3 class="font-semibold text-white">Task Manager</h3>
+        <p class="mt-2 text-sm text-slate-400">Django project built for the Mediusware written exam.</p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Python</span>
+          
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">Django</span>
+          
+        </div>
+
+        <div class="mt-auto flex flex-wrap items-center gap-5 pt-5 text-sm font-semibold">
+          
+          <a href="https://github.com/Ronnie-Ahmed/Task_manager/tree/dev.0.0.1" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-brands fa-github mr-1"></i>Code
+          </a>
+          
+          
+          
+        </div>
+      </div>
+    </article>
+    
+  </div>
+</section>
+  <section id="contactme" class="relative mx-auto max-w-6xl scroll-mt-20 px-6 py-20">
+  <div class="pointer-events-none absolute inset-x-6 top-10 -z-10 h-64 rounded-full bg-orange-500/10 blur-3xl"></div>
+
+  <div class="mb-10 text-center">
+    <p class="text-sm font-semibold uppercase tracking-widest text-orange-400">Contact</p>
+    <h2 class="mt-2 font-tektur text-3xl font-bold text-white md:text-4xl">Let's build something together</h2>
+    <p class="mx-auto mt-4 max-w-xl text-slate-400">
+      Hiring for a Rust or blockchain role, or have a project in mind? Send me a message and I'll reply as soon as I can.
+    </p>
+  </div>
+
+  <div class="grid gap-8 lg:grid-cols-5">
+
+    <!-- Info column -->
+    <div class="space-y-4 lg:col-span-2">
+      <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
+        <span class="inline-flex items-center gap-2 rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-400">
+          <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Open to opportunities
+        </span>
+        <p class="mt-3 text-sm text-slate-400">
+          Rust, Substrate and smart contract roles, contract work, and technical collaborations.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5">
+        <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-orange-400/10 text-orange-400">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-slate-500">Based in</p>
+          <p class="font-semibold text-white">Dhaka, Bangladesh</p>
+        </div>
+      </div>
+
+      <a href="https://www.linkedin.com/in/md-raisul-islam-rony-a059a7291/" target="_blank" rel="noopener noreferrer"
+         class="group flex items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-orange-400/50">
+        <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-orange-400/10 text-orange-400">
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <div class="flex-1">
+          <p class="text-xs uppercase tracking-widest text-slate-500">LinkedIn</p>
+          <p class="font-semibold text-white">Connect with me</p>
+        </div>
+        <i class="fa-solid fa-arrow-right text-slate-500 transition group-hover:translate-x-1 group-hover:text-orange-400"></i>
+      </a>
+
+      <a href="https://github.com/Ronnie-Ahmed" target="_blank" rel="noopener noreferrer"
+         class="group flex items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-orange-400/50">
+        <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-orange-400/10 text-orange-400">
+          <i class="fa-brands fa-github"></i>
+        </div>
+        <div class="flex-1">
+          <p class="text-xs uppercase tracking-widest text-slate-500">GitHub</p>
+          <p class="font-semibold text-white">See my code</p>
+        </div>
+        <i class="fa-solid fa-arrow-right text-slate-500 transition group-hover:translate-x-1 group-hover:text-orange-400"></i>
+      </a>
+
+      <a href="https://wa.link/ur2yll" target="_blank" rel="noopener noreferrer"
+         class="group flex items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-orange-400/50">
+        <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-orange-400/10 text-orange-400">
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <div class="flex-1">
+          <p class="text-xs uppercase tracking-widest text-slate-500">WhatsApp</p>
+          <p class="font-semibold text-white">Message me directly</p>
+        </div>
+        <i class="fa-solid fa-arrow-right text-slate-500 transition group-hover:translate-x-1 group-hover:text-orange-400"></i>
+      </a>
+    </div>
+
+    <!-- Form column -->
+    <form id="contact-form" class="rounded-xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 lg:col-span-3">
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for="name" class="mb-1.5 block text-sm font-medium text-slate-300">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name"
+                 class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-2.5 text-slate-100 placeholder:text-slate-600 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/20">
+        </div>
+        <div>
+          <label for="email" class="mb-1.5 block text-sm font-medium text-slate-300">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@company.com"
+                 class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-2.5 text-slate-100 placeholder:text-slate-600 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/20">
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <label for="subject" class="mb-1.5 block text-sm font-medium text-slate-300">Subject</label>
+        <input type="text" id="subject" name="subject" required placeholder="Rust developer role, project inquiry..."
+               class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-2.5 text-slate-100 placeholder:text-slate-600 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/20">
+      </div>
+
+      <div class="mt-5">
+        <label for="message" class="mb-1.5 block text-sm font-medium text-slate-300">Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Tell me a bit about the role or project..."
+                  class="w-full resize-y rounded-lg border border-slate-700 bg-slate-950 px-4 py-2.5 text-slate-100 placeholder:text-slate-600 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/20"></textarea>
+      </div>
+
+      <button id="send-btn" type="submit"
+              class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-orange-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-orange-300 disabled:cursor-not-allowed disabled:opacity-60">
+        <span id="send-label">Send message</span>
+        <i class="fa-solid fa-paper-plane"></i>
       </button>
+
+      <p id="form-status" role="status" aria-live="polite" class="mt-4 hidden rounded-lg px-4 py-3 text-sm"></p>
     </form>
   </div>
 </section>
@@ -602,15 +1193,161 @@
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
   emailjs.init("0I-yVHiRaDswFf8r0");
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
+
+  const form = document.getElementById("contact-form");
+  const btn = document.getElementById("send-btn");
+  const label = document.getElementById("send-label");
+  const status = document.getElementById("form-status");
+
+  function showStatus(ok, text) {
+    status.textContent = text;
+    status.className = "mt-4 rounded-lg px-4 py-3 text-sm " +
+      (ok ? "bg-emerald-400/10 text-emerald-400" : "bg-red-400/10 text-red-400");
+  }
+
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
-    emailjs.sendForm("service_9uravqy", "template_xwadr1d", this).then(
-      () => { alert("Email Sent Successfully"); this.reset(); },
-      () => { alert("Email Not Sent"); }
-    );
+    btn.disabled = true;
+    label.textContent = "Sending...";
+    status.className = "hidden";
+
+    emailjs.sendForm("service_9uravqy", "template_xwadr1d", form).then(
+      () => {
+        showStatus(true, "Thanks! Your message was sent and I'll get back to you soon.");
+        form.reset();
+      },
+      () => {
+        showStatus(false, "Something went wrong and your message wasn't sent. Please try again, or reach me on LinkedIn.");
+      }
+    ).finally(() => {
+      btn.disabled = false;
+      label.textContent = "Send message";
+    });
   });
+</script>
+  <footer class="relative mt-10 border-t border-slate-800 bg-slate-900/40">
+  <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-orange-400/60 to-transparent"></div>
+
+  <div class="mx-auto max-w-6xl px-6 py-12">
+    <div class="grid gap-10 md:grid-cols-3">
+
+      <!-- Brand -->
+      <div>
+        <a href="#aboutme" class="font-tektur text-2xl font-bold text-white">Rony<span class="text-orange-400">.</span></a>
+        <p class="mt-3 max-w-xs text-sm text-slate-400">
+          Rust &amp; blockchain engineer building Layer 1 infrastructure,
+          smart contracts and fast backends.
+        </p>
+        <p class="mt-4 inline-flex items-center gap-2 text-xs text-slate-400">
+          <i class="fa-solid fa-location-dot text-orange-400"></i> Dhaka, Bangladesh
+        </p>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-widest text-white">Explore</h3>
+        <ul class="mt-4 space-y-2 text-sm">
+          
+          <li>
+            <a href="#experience" class="text-slate-400 transition hover:text-orange-400">Experience</a>
+          </li>
+          
+          <li>
+            <a href="#work" class="text-slate-400 transition hover:text-orange-400">Projects</a>
+          </li>
+          
+          <li>
+            <a href="#skills" class="text-slate-400 transition hover:text-orange-400">Skills</a>
+          </li>
+          
+          <li>
+            <a href="#services" class="text-slate-400 transition hover:text-orange-400">What I do</a>
+          </li>
+          
+          <li>
+            <a href="#contactme" class="text-slate-400 transition hover:text-orange-400">Contact</a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <!-- Connect -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-widest text-white">Connect</h3>
+        <div class="mt-4 flex gap-3">
+          <a href="https://github.com/Ronnie-Ahmed" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+             class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-700 text-lg text-slate-300 transition hover:-translate-y-1 hover:border-orange-400 hover:text-orange-400">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/md-raisul-islam-rony-a059a7291/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+             class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-700 text-lg text-slate-300 transition hover:-translate-y-1 hover:border-orange-400 hover:text-orange-400">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://wa.link/ur2yll" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+             class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-700 text-lg text-slate-300 transition hover:-translate-y-1 hover:border-orange-400 hover:text-orange-400">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+
+        <a href="#contactme"
+           class="mt-5 inline-block rounded-md bg-orange-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-orange-300">
+          Get in touch
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="mt-10 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-6 text-xs text-slate-500 sm:flex-row">
+      <p>© <span id="year">2026</span> Md. Raisul Islam Rony. All rights reserved.</p>
+      <p>Built with Rust, Axum, Askama and Tailwind CSS</p>
+      <a href="#aboutme"
+         class="inline-flex items-center gap-2 rounded-md border border-slate-700 px-3 py-1.5 text-slate-300 transition hover:border-orange-400 hover:text-orange-400">
+        Back to top <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </div>
 
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+      mobileMenu.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => mobileMenu.classList.add("hidden"))
+      );
+    }
+
+    // Fade in on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    // Project filter (a card can belong to several space-separated categories)
+    const buttons = document.querySelectorAll("[data-filter]");
+    const cards = document.querySelectorAll("[data-cat]");
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const f = btn.dataset.filter;
+        buttons.forEach((b) => b.setAttribute("aria-pressed", b === btn ? "true" : "false"));
+        cards.forEach((c) =>
+          c.classList.toggle("hidden", f !== "all" && !c.dataset.cat.split(" ").includes(f))
+        );
+      });
+    });
+  </script>
 </body>
 </html>

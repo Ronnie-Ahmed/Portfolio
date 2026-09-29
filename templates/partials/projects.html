@@ -1,37 +1,65 @@
-<section id="work" class="flex flex-col py-20 mt-6 bg-gray-400 rounded-2xl shadow-md hover:shadow-2xl shadow-slate-50">
-  <div class="container mx-auto mb-10 px-4 flex flex-wrap justify-center items-center">
-    <div class="flex flex-col text-center items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <h1 class="text-3xl p-6 font-bold text-gray-800 tracking-wide leading-tight">Projects</h1>
-    </div>
+<section id="work" class="mx-auto max-w-6xl scroll-mt-20 px-6 py-20">
+  <div class="mb-8">
+    <p class="text-sm font-semibold uppercase tracking-widest text-orange-400">Projects</p>
+    <h2 class="mt-2 font-tektur text-3xl font-bold text-white md:text-4xl">Things I've built</h2>
   </div>
 
-  <div class="grid gap-4 p-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-    {% for p in projects %}
-    <div class="relative rounded-lg shadow-lg p-6 overflow-hidden">
-      <div class="absolute top-0 left-0 w-full h-full rounded-lg"
-           style="background-image: url('/static/images/{{ p.image }}'); background-size: cover; filter: blur(8px);"></div>
-      <div class="relative">
-        <div class="mb-4 group">
-          <img src="/static/images/{{ p.image }}" alt="{{ p.title }}" loading="lazy"
-               class="w-full h-auto rounded-lg shadow-lg object-cover transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
-        </div>
-        <h3 class="text-2xl font-bold mb-2 rounded-xs text-center bg-gray-400 text-black">{{ p.title }}</h3>
-        <p class="font-bold bg-gray-400 rounded-xs">{{ p.description }}</p>
+  <div class="mb-8 flex flex-wrap gap-2">
+    <button data-filter="all" aria-pressed="true" class="rounded-full border border-slate-700 px-4 py-1.5 text-sm transition hover:border-orange-400 aria-pressed:border-orange-400 aria-pressed:bg-orange-400 aria-pressed:text-slate-950">All</button>
+    <button data-filter="professional" aria-pressed="false" class="rounded-full border border-slate-700 px-4 py-1.5 text-sm transition hover:border-orange-400 aria-pressed:border-orange-400 aria-pressed:bg-orange-400 aria-pressed:text-slate-950">Professional</button>
+    <button data-filter="rust" aria-pressed="false" class="rounded-full border border-slate-700 px-4 py-1.5 text-sm transition hover:border-orange-400 aria-pressed:border-orange-400 aria-pressed:bg-orange-400 aria-pressed:text-slate-950">Rust</button>
+    <button data-filter="blockchain" aria-pressed="false" class="rounded-full border border-slate-700 px-4 py-1.5 text-sm transition hover:border-orange-400 aria-pressed:border-orange-400 aria-pressed:bg-orange-400 aria-pressed:text-slate-950">Blockchain</button>
+    <button data-filter="web" aria-pressed="false" class="rounded-full border border-slate-700 px-4 py-1.5 text-sm transition hover:border-orange-400 aria-pressed:border-orange-400 aria-pressed:bg-orange-400 aria-pressed:text-slate-950">Web</button>
+  </div>
 
-        <div class="flex flex-wrap gap-3 mt-3">
-          <a href="{{ p.github }}" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            View on GitHub
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {% for p in projects %}
+    <article data-cat="{{ p.category }}"
+             class="reveal group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 transition hover:-translate-y-1 hover:border-orange-400/50">
+      {% if let Some(img) = p.image %}
+      <div class="aspect-video overflow-hidden bg-slate-800">
+        <img src="/static/images/{{ img }}" alt="{{ p.title }} screenshot" loading="lazy"
+             class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
+      </div>
+      {% else %}
+      <div class="flex aspect-video items-center justify-center bg-linear-to-br from-orange-500/20 via-slate-800 to-slate-900">
+        <span class="font-tektur text-4xl text-orange-400">&lt;/&gt;</span>
+      </div>
+      {% endif %}
+
+      <div class="flex flex-1 flex-col p-5">
+        {% if p.work %}
+        <span class="mb-2 inline-flex w-fit items-center gap-1 rounded-full bg-orange-400/10 px-2.5 py-0.5 text-xs font-semibold text-orange-400">
+          <i class="fa-solid fa-briefcase"></i> Professional work
+        </span>
+        {% endif %}
+
+        <h3 class="font-semibold text-white">{{ p.title }}</h3>
+        <p class="mt-2 text-sm text-slate-400">{{ p.description }}</p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          {% for tag in p.tags %}
+          <span class="rounded-full bg-slate-800 px-2.5 py-0.5 text-xs text-slate-300">{{ tag }}</span>
+          {% endfor %}
+        </div>
+
+        <div class="mt-auto flex flex-wrap items-center gap-5 pt-5 text-sm font-semibold">
+          {% if let Some(gh) = p.github %}
+          <a href="{{ gh }}" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-brands fa-github mr-1"></i>Code
           </a>
+          {% endif %}
           {% if let Some(live) = p.live %}
-          <a href="{{ live }}" target="_blank" rel="noopener noreferrer"
-             class="inline-block bg-gradient-to-r from-blue-500 via-gray-500 to-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            Live
+          <a href="{{ live }}" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:underline">
+            <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>Live demo
           </a>
+          {% endif %}
+          {% if p.work && p.github.is_none() %}
+          <span class="text-xs font-normal text-slate-500"><i class="fa-solid fa-lock mr-1"></i>Private repository</span>
           {% endif %}
         </div>
       </div>
-    </div>
+    </article>
     {% endfor %}
   </div>
 </section>

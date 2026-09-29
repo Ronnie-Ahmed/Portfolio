@@ -1,18 +1,24 @@
-<section id="experience" class="flex flex-col py-20 mt-6 bg-gray-400 rounded-2xl shadow-md hover:shadow-2xl shadow-slate-50">
-  {% for group in skill_groups %}
-  <div class="container mx-auto mb-10 px-4 flex flex-wrap justify-center items-center">
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <h1 class="text-3xl p-6 font-bold text-gray-800 tracking-wide leading-tight text-center">{{ group.title }}</h1>
-    </div>
-    {% for skill in group.skills %}
-    <div class="flex flex-col items-center mb-6 mx-6 rounded-lg shadow-2xl shadow-black">
-      <img src="/static/images/{{ skill.image }}" alt="{{ skill.name }}" loading="lazy"
-           class="w-12 h-12 m-2 rounded-md transform hover:scale-110 transition-transform hover:shadow-2xl hover:rotate-3">
-      <span class="text-gray-800 font-bold mx-4 text-sm uppercase tracking-wide hover:text-yellow-900 cursor-pointer transform hover:rotate-3 hover:scale-110 transition-transform">
-        {{ skill.name }}
-      </span>
+<section id="skills" class="mx-auto max-w-6xl scroll-mt-20 px-6 py-20">
+  <div class="mb-10">
+    <p class="text-sm font-semibold uppercase tracking-widest text-orange-400">Skills</p>
+    <h2 class="mt-2 font-tektur text-3xl font-bold text-white md:text-4xl">Tools I work with</h2>
+  </div>
+
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {% for group in skill_groups %}
+    <div class="reveal rounded-xl border border-slate-800 bg-slate-900/60 p-6">
+      <h3 class="font-tektur text-lg font-semibold text-white">{{ group.title }}</h3>
+      <div class="mt-4 flex flex-wrap gap-2">
+        {% for skill in group.skills %}
+        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+          {% if let Some(img) = skill.image %}
+          <img src="/static/images/{{ img }}" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
+          {% endif %}
+          {{ skill.name }}
+        </span>
+        {% endfor %}
+      </div>
     </div>
     {% endfor %}
   </div>
-  {% endfor %}
 </section>
