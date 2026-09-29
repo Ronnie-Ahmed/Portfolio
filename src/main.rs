@@ -15,6 +15,10 @@ struct IndexTemplate {
     projects: Vec<Project>,
     skill_groups: Vec<SkillGroup>,
     services: Vec<Service>,
+
+    emailjs_public_key: String,
+    emailjs_service_id: String,
+    emailjs_template_id: String,
 }
 
 fn render_index() -> String {
@@ -25,6 +29,15 @@ fn render_index() -> String {
         projects: data::projects(),
         skill_groups: data::skill_groups(),
         services: data::services(),
+
+        emailjs_public_key: env::var("PUBLIC_KEY")
+            .expect("EMAILJS_PUBLIC_KEY is not set"),
+
+        emailjs_service_id: env::var("SERVICE_ID")
+            .expect("EMAILJS_SERVICE_ID is not set"),
+
+        emailjs_template_id: env::var("TEMPLATE_ID")
+            .expect("EMAILJS_TEMPLATE_ID is not set"),
     }
     .render()
     .expect("template render failed")
@@ -57,6 +70,7 @@ fn build_static() {
 
 #[tokio::main]
 async fn main() {
+     dotenvy::dotenv().ok();
     if env::args().nth(1).as_deref() == Some("build") {
         build_static();
         return;

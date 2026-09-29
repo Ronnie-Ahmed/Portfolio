@@ -8,3 +8,4 @@ axum = "0.7"
 tokio = { version = "1", features = ["full"] }
 askama = "0.12"
 tower-http = { version = "0.5", features = ["fs"] }
+dotenvy = "0.15"

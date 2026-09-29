@@ -32,6 +32,18 @@
         </div>
       </div>
 
+      <a href="mailto:rksraisul@gmail.com"
+         class="group flex items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-orange-400/50">
+        <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-orange-400/10 text-orange-400">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <div class="flex-1">
+          <p class="text-xs uppercase tracking-widest text-slate-500">Email</p>
+          <p class="font-semibold text-white">rksraisul@gmail.com</p>
+        </div>
+        <i class="fa-solid fa-arrow-right text-slate-500 transition group-hover:translate-x-1 group-hover:text-orange-400"></i>
+      </a>
+
       <a href="https://www.linkedin.com/in/md-raisul-islam-rony-a059a7291/" target="_blank" rel="noopener noreferrer"
          class="group flex items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-orange-400/50">
         <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-orange-400/10 text-orange-400">
@@ -103,42 +115,94 @@
       </button>
 
       <p id="form-status" role="status" aria-live="polite" class="mt-4 hidden rounded-lg px-4 py-3 text-sm"></p>
+
+      <p class="mt-4 text-center text-sm text-slate-500">
+        Prefer email? Write to
+        <a href="mailto:rksraisul@gmail.com" class="text-orange-400 hover:underline">rksraisul@gmail.com</a>
+      </p>
     </form>
   </div>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  emailjs.init("0I-yVHiRaDswFf8r0");
+(function () {
+ var PUBLIC_KEY = "{{ emailjs_public_key }}";
+  var SERVICE_ID = "{{ emailjs_service_id }}";
+  var TEMPLATE_ID = "{{ emailjs_template_id }}";
 
-  const form = document.getElementById("contact-form");
-  const btn = document.getElementById("send-btn");
-  const label = document.getElementById("send-label");
-  const status = document.getElementById("form-status");
+  var form = document.getElementById("contact-form");
+  var btn = document.getElementById("send-btn");
+  var labelEl = document.getElementById("send-label");
+  var statusEl = document.getElementById("form-status");
+
+  var configured = PUBLIC_KEY &&
+                   SERVICE_ID &&
+                   TEMPLATE_ID;
+
+  if (configured) {
+    emailjs.init({
+      publicKey: PUBLIC_KEY
+    });
+  }
 
   function showStatus(ok, text) {
-    status.textContent = text;
-    status.className = "mt-4 rounded-lg px-4 py-3 text-sm " +
-      (ok ? "bg-emerald-400/10 text-emerald-400" : "bg-red-400/10 text-red-400");
+    statusEl.textContent = text;
+
+    statusEl.className =
+      "mt-4 rounded-lg px-4 py-3 text-sm " +
+      (ok
+        ? "bg-emerald-400/10 text-emerald-400"
+        : "bg-red-400/10 text-red-400");
   }
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    btn.disabled = true;
-    label.textContent = "Sending...";
-    status.className = "hidden";
 
-    emailjs.sendForm("service_9uravqy", "template_xwadr1d", form).then(
-      () => {
-        showStatus(true, "Thanks! Your message was sent and I'll get back to you soon.");
+    if (!configured) {
+      showStatus(
+        false,
+        "The contact form isn't configured yet. Please email rksraisul@gmail.com directly."
+      );
+      return;
+    }
+
+    btn.disabled = true;
+    labelEl.textContent = "Sending...";
+    statusEl.className = "hidden";
+
+    emailjs.sendForm(
+      SERVICE_ID,
+      TEMPLATE_ID,
+      form
+    )
+      .then(function () {
+        showStatus(
+          true,
+          "Thanks! Your message was sent and I'll get back to you soon."
+        );
+
         form.reset();
-      },
-      () => {
-        showStatus(false, "Something went wrong and your message wasn't sent. Please try again, or reach me on LinkedIn.");
-      }
-    ).finally(() => {
-      btn.disabled = false;
-      label.textContent = "Send message";
-    });
+      })
+      .catch(function (err) {
+        console.error("EmailJS error:", err);
+
+        var code =
+          err && err.status
+            ? " (error " + err.status + ")"
+            : "";
+
+        showStatus(
+          false,
+          "Your message couldn't be sent" +
+          code +
+          ". Please try again, or email rksraisul@gmail.com directly."
+        );
+      })
+      .finally(function () {
+        btn.disabled = false;
+        labelEl.textContent = "Send message";
+      });
   });
+})();
 </script>
