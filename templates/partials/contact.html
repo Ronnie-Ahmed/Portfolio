@@ -22,7 +22,7 @@
         </p>
       </div>
 
-      <div class="flex items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5">
+      <div data-tilt="6" class="flex items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5">
         <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-orange-400/10 text-orange-400">
           <i class="fa-solid fa-location-dot"></i>
         </div>
@@ -33,7 +33,7 @@
       </div>
 
       <a href="mailto:rksraisul@gmail.com"
-         class="group flex items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-orange-400/50">
+         data-tilt="6" class="group flex items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-orange-400/50">
         <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-orange-400/10 text-orange-400">
           <i class="fa-solid fa-envelope"></i>
         </div>
@@ -45,7 +45,7 @@
       </a>
 
       <a href="https://www.linkedin.com/in/md-raisul-islam-rony-a059a7291/" target="_blank" rel="noopener noreferrer"
-         class="group flex items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-orange-400/50">
+         data-tilt="6" class="group flex items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-orange-400/50">
         <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-orange-400/10 text-orange-400">
           <i class="fa-brands fa-linkedin"></i>
         </div>
@@ -57,7 +57,7 @@
       </a>
 
       <a href="https://github.com/Ronnie-Ahmed" target="_blank" rel="noopener noreferrer"
-         class="group flex items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-orange-400/50">
+         data-tilt="6" class="group flex items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-orange-400/50">
         <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-orange-400/10 text-orange-400">
           <i class="fa-brands fa-github"></i>
         </div>
@@ -69,7 +69,7 @@
       </a>
 
       <a href="https://wa.link/ur2yll" target="_blank" rel="noopener noreferrer"
-         class="group flex items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-orange-400/50">
+         data-tilt="6" class="group flex items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-orange-400/50">
         <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-orange-400/10 text-orange-400">
           <i class="fa-brands fa-whatsapp"></i>
         </div>
@@ -109,7 +109,7 @@
       </div>
 
       <button id="send-btn" type="submit"
-              class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-orange-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-orange-300 disabled:cursor-not-allowed disabled:opacity-60">
+              class="btn-3d mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-orange-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-orange-300 disabled:cursor-not-allowed disabled:opacity-60">
         <span id="send-label">Send message</span>
         <i class="fa-solid fa-paper-plane"></i>
       </button>
@@ -127,6 +127,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 (function () {
+  // TODO: paste the three values from your EmailJS dashboard
  var PUBLIC_KEY = "{{ emailjs_public_key }}";
   var SERVICE_ID = "{{ emailjs_service_id }}";
   var TEMPLATE_ID = "{{ emailjs_template_id }}";
@@ -136,34 +137,22 @@
   var labelEl = document.getElementById("send-label");
   var statusEl = document.getElementById("form-status");
 
-  var configured = PUBLIC_KEY &&
-                   SERVICE_ID &&
-                   TEMPLATE_ID;
-
-  if (configured) {
-    emailjs.init({
-      publicKey: PUBLIC_KEY
-    });
-  }
+  var configured = PUBLIC_KEY.indexOf("YOUR_") !== 0 &&
+                   SERVICE_ID.indexOf("YOUR_") !== 0 &&
+                   TEMPLATE_ID.indexOf("YOUR_") !== 0;
+  if (configured) emailjs.init({ publicKey: PUBLIC_KEY });
 
   function showStatus(ok, text) {
     statusEl.textContent = text;
-
-    statusEl.className =
-      "mt-4 rounded-lg px-4 py-3 text-sm " +
-      (ok
-        ? "bg-emerald-400/10 text-emerald-400"
-        : "bg-red-400/10 text-red-400");
+    statusEl.className = "mt-4 rounded-lg px-4 py-3 text-sm " +
+      (ok ? "bg-emerald-400/10 text-emerald-400" : "bg-red-400/10 text-red-400");
   }
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     if (!configured) {
-      showStatus(
-        false,
-        "The contact form isn't configured yet. Please email rksraisul@gmail.com directly."
-      );
+      showStatus(false, "The contact form isn't set up yet. Please email rksraisul@gmail.com directly.");
       return;
     }
 
@@ -171,33 +160,15 @@
     labelEl.textContent = "Sending...";
     statusEl.className = "hidden";
 
-    emailjs.sendForm(
-      SERVICE_ID,
-      TEMPLATE_ID,
-      form
-    )
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form)
       .then(function () {
-        showStatus(
-          true,
-          "Thanks! Your message was sent and I'll get back to you soon."
-        );
-
+        showStatus(true, "Thanks! Your message was sent and I'll get back to you soon.");
         form.reset();
       })
       .catch(function (err) {
         console.error("EmailJS error:", err);
-
-        var code =
-          err && err.status
-            ? " (error " + err.status + ")"
-            : "";
-
-        showStatus(
-          false,
-          "Your message couldn't be sent" +
-          code +
-          ". Please try again, or email rksraisul@gmail.com directly."
-        );
+        var code = err && err.status ? " (error " + err.status + ")" : "";
+        showStatus(false, "Your message couldn't be sent" + code + ". Please try again, or email rksraisul@gmail.com directly.");
       })
       .finally(function () {
         btn.disabled = false;

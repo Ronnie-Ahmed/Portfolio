@@ -6,11 +6,11 @@
 
   <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
     {% for group in skill_groups %}
-    <div class="reveal rounded-xl border border-slate-800 bg-slate-900/60 p-6">
-      <h3 class="font-tektur text-lg font-semibold text-white">{{ group.title }}</h3>
+    <div data-tilt="6" class="reveal rounded-xl border border-slate-800 bg-slate-900/60 p-6">
+      <h3 class="depth-sm font-tektur text-lg font-semibold text-white">{{ group.title }}</h3>
       <div class="mt-4 flex flex-wrap gap-2">
         {% for skill in group.skills %}
-        <span class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
+        <span class="chip-3d inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-sm text-slate-200">
           {% if let Some(img) = skill.image %}
           <img src="/static/images/{{ img }}" alt="" loading="lazy" class="h-5 w-5 rounded-sm object-contain">
           {% endif %}

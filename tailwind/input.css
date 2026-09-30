@@ -5,16 +5,150 @@
   --font-tektur: "Tektur", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------- Scroll-in: tilt up from below ---------- */
 .reveal {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: perspective(900px) rotateX(14deg) translateY(28px);
+  transform-origin: 50% 100%;
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 .reveal.visible {
   opacity: 1;
   transform: none;
 }
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
+
+/* ---------- Tilt cards (static/js/effects.js adds data-tilt automatically) ---------- */
+[data-tilt] {
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
-html { scroll-behavior: smooth; }
+/* glare that follows the cursor */
+[data-tilt]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    circle at var(--gx, 50%) var(--gy, 50%),
+    rgba(255, 255, 255, 0.14),
+    transparent 55%
+  );
+  transition: opacity 0.3s ease;
+}
+[data-tilt]:hover::after {
+  opacity: 1;
+}
+/* elements that float above the card */
+[data-tilt] .depth { transform: translateZ(36px); }
+[data-tilt] .depth-sm { transform: translateZ(20px); }
+
+/* screenshot that shifts inside its card as it tilts */
+.parallax-img {
+  transform: translate3d(calc(var(--mx, 0) * -14px), calc(var(--my, 0) * -10px), 0) scale(1.08);
+  transition: transform 0.25s ease-out;
+}
+
+/* ---------- Project filter: cards flip in ---------- */
+@keyframes flip-in {
+  from { opacity: 0; transform: perspective(900px) rotateY(-70deg) scale(0.9); }
+  to   { opacity: 1; transform: none; }
+}
+.flip-in {
+  animation: flip-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+
+/* ---------- Extruded hero title ---------- */
+.title-3d {
+  text-shadow:
+    0 1px 0 #9a3412,
+    0 2px 0 #7c2d12,
+    0 3px 0 #7c2d12,
+    0 4px 0 #431407,
+    0 10px 18px rgba(0, 0, 0, 0.55);
+}
+
+/* ---------- Raised 3D button ---------- */
+.btn-3d {
+  box-shadow: 0 4px 0 0 #c2410c, 0 12px 20px -8px rgba(249, 115, 22, 0.55);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.2s ease;
+}
+.btn-3d:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 0 #c2410c, 0 16px 24px -8px rgba(249, 115, 22, 0.6);
+}
+.btn-3d:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 0 #c2410c, 0 4px 8px -4px rgba(249, 115, 22, 0.5);
+}
+.btn-3d:disabled {
+  transform: none;
+  box-shadow: 0 2px 0 0 #c2410c;
+}
+
+/* ---------- Skill chips lift off the card ---------- */
+.chip-3d {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.chip-3d:hover {
+  transform: perspective(300px) translateZ(14px) translateY(-2px) rotateX(-10deg);
+  border-color: #fb923c;
+  box-shadow: 0 10px 18px -8px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Social icons flip on hover ---------- */
+.spin-y {
+  transition: transform 0.7s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.spin-y:not(.flex) {
+  display: inline-block;
+}
+.spin-y:hover {
+  transform: perspective(300px) rotateY(360deg);
+}
+
+/* ---------- Orbit rings around the profile photo ---------- */
+.scene {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+.orbit {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+}
+.orbit-a {
+  inset: -12%;
+  border: 2px solid rgba(251, 146, 60, 0.6);
+  animation: orbit-a 14s linear infinite;
+}
+.orbit-b {
+  inset: -22%;
+  border: 2px dashed rgba(148, 163, 184, 0.45);
+  animation: orbit-b 22s linear infinite reverse;
+}
+@keyframes orbit-a {
+  from { transform: rotateX(72deg) rotateZ(0deg); }
+  to   { transform: rotateX(72deg) rotateZ(360deg); }
+}
+@keyframes orbit-b {
+  from { transform: rotateY(68deg) rotateZ(0deg); }
+  to   { transform: rotateY(68deg) rotateZ(360deg); }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .orbit { animation: none; }
+  .flip-in { animation: none; }
+  .title-3d { text-shadow: none; }
+  .btn-3d, .chip-3d, .spin-y, .parallax-img { transition: none; }
+  .spin-y:hover, .chip-3d:hover { transform: none; }
+}

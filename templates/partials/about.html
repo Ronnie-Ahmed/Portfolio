@@ -1,5 +1,6 @@
 <section id="aboutme" class="relative overflow-hidden pt-32 pb-20 scroll-mt-20">
   <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(249,115,22,0.18),transparent)]"></div>
+  <div id="hero-3d" class="pointer-events-none absolute inset-0 -z-10 opacity-60"></div>
 
   <div class="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[1.4fr_1fr]">
     <div>
@@ -13,28 +14,29 @@
       </h1>
 
       <p class="mt-6 max-w-xl text-lg text-slate-400">
-        I build fast, reliable backend systems and smart contracts: from Axum APIs
-        backed by Postgres and Redis to Solidity and DeFi applications.
+        I build Layer 1 blockchain infrastructure in Rust: Substrate runtimes, custom
+        pallets and EVM-compatible chains. I also write smart contracts and Axum backends.
+        Currently at Eterces; previously Cyborg Network and Devolved AI.
       </p>
 
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href="#work" class="rounded-md bg-orange-400 px-5 py-2.5 font-semibold text-slate-950 transition hover:bg-orange-300">View projects</a>
-        <a href="https://drive.google.com/file/d/1bUbwtG8xn9fBRifgkwGBFDWOFI54NwnI/view?usp=sharing"
+        <a href="#work" class="btn-3d rounded-md bg-orange-400 px-5 py-2.5 font-semibold text-slate-950 hover:bg-orange-300">View projects</a>
+        <a href="https://drive.google.com/file/d/1y_zBV8H2n1Is4z0QHtlSsb7etZjLsQkH/view?usp=sharing"
            target="_blank" rel="noopener noreferrer"
            class="rounded-md border border-slate-600 px-5 py-2.5 font-semibold text-slate-200 transition hover:border-orange-400 hover:text-orange-400">Resume</a>
         <a href="#contactme" class="rounded-md border border-slate-600 px-5 py-2.5 font-semibold text-slate-200 transition hover:border-orange-400 hover:text-orange-400">Contact</a>
       </div>
 
       <div class="mt-6 flex gap-5 text-2xl text-slate-400">
-        <a href="https://github.com/Ronnie-Ahmed" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="transition hover:text-orange-400"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/md-raisul-islam-rony-a059a7291/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="transition hover:text-orange-400"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://wa.link/ur2yll" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="transition hover:text-orange-400"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://github.com/Ronnie-Ahmed" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="spin-y hover:text-orange-400"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/md-raisul-islam-rony-a059a7291/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="spin-y hover:text-orange-400"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://wa.link/ur2yll" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="spin-y hover:text-orange-400"><i class="fa-brands fa-whatsapp"></i></a>
       </div>
 
       <dl class="mt-10 grid max-w-md grid-cols-3 gap-4">
         {% for stat in stats %}
-        <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-4">
-          <dt class="font-tektur text-2xl font-bold text-white">{{ stat.value }}</dt>
+        <div data-tilt="12" class="rounded-xl border border-slate-800 bg-slate-900/60 p-4">
+          <dt class="depth-sm font-tektur text-2xl font-bold text-white">{{ stat.value }}</dt>
           <dd class="mt-1 text-xs text-slate-400">{{ stat.label }}</dd>
         </div>
         {% endfor %}
@@ -42,8 +44,12 @@
     </div>
 
     <div class="mx-auto w-64 md:w-full md:max-w-xs">
-      <img src="/static/images/Raisul_Photo.png" alt="Portrait of Md. Raisul Islam Rony"
-           class="aspect-square w-full rounded-2xl object-cover ring-2 ring-orange-400/60 ring-offset-4 ring-offset-slate-950">
+      <div class="scene relative">
+        <span class="orbit orbit-a" aria-hidden="true"></span>
+        <span class="orbit orbit-b" aria-hidden="true"></span>
+        <img data-tilt="12" src="/static/images/Raisul_Photo.png" alt="Portrait of Md. Raisul Islam Rony"
+             class="relative aspect-square w-full rounded-2xl object-cover ring-2 ring-orange-400/60 ring-offset-4 ring-offset-slate-950">
+      </div>
     </div>
   </div>
 </section>

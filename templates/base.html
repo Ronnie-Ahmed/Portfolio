@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/static/css/output.css">
   <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
 </head>
+<script src="/static/js/effects.js" defer></script>
 <body class="bg-slate-950 text-slate-300 antialiased">
   {% block content %}{% endblock %}
 
@@ -32,6 +33,8 @@
         if (e.isIntersecting) {
           e.target.classList.add("visible");
           io.unobserve(e.target);
+          // once the fade-in has finished, remove it so the 3D tilt can take over
+          setTimeout(function () { e.target.classList.remove("reveal", "visible"); }, 800);
         }
       });
     }, { threshold: 0.1 });
@@ -50,5 +53,7 @@
       });
     });
   </script>
+
+  <script src="/static/js/effects.js" defer></script>
 </body>
 </html>
