@@ -26,6 +26,30 @@ usage() {
   exit 0
 }
 
+# Download the standalone Tailwind CLI as ./tw if it is missing
+ensure_tw() {
+  if [ -x ./tw ]; then return 0; fi
+  command -v curl >/dev/null || fail "./tw is missing and curl is not installed"
+  local os arch asset
+  case "$(uname -s)" in
+    Linux)  os=linux ;;
+    Darwin) os=macos ;;
+    *)      fail "./tw is missing and this OS is not supported by the auto-download" ;;
+  esac
+  case "$(uname -m)" in
+    x86_64|amd64)  arch=x64 ;;
+    aarch64|arm64) arch=arm64 ;;
+    *)             fail "./tw is missing and this CPU type is not supported by the auto-download" ;;
+  esac
+  asset="tailwindcss-$os-$arch"
+  warn "./tw not found - downloading $asset (about 100 MB)"
+  curl -fL --progress-bar -o tw "https://github.com/tailwindlabs/tailwindcss/releases/latest/download/$asset" \
+    || { rm -f tw; fail "download failed - check your internet connection"; }
+  chmod +x tw
+  ./tw --help >/dev/null 2>&1 || { rm -f tw; fail "the downloaded ./tw does not run"; }
+  ok "downloaded ./tw"
+}
+
 # ---------- arguments ----------
 while [ $# -gt 0 ]; do
   case "$1" in
@@ -43,7 +67,7 @@ step "Checking the project"
 git rev-parse --git-dir >/dev/null 2>&1 || fail "this folder is not a git repository"
 command -v cargo >/dev/null     || fail "cargo is not installed or not on PATH"
 [ -f tailwind/input.css ]       || fail "tailwind/input.css not found"
-[ -x ./tw ]                     || fail "./tw is missing or not executable (run: chmod +x tw)"
+ensure_tw
 BRANCH="$(git branch --show-current)"
 [ -n "$BRANCH" ] || fail "no branch checked out (detached HEAD) - run: git checkout <your-branch>"
 ok "git branch: $BRANCH"
@@ -71,7 +95,7 @@ ok "dist/ is not ignored"
 
 # ---------- 2. content warnings ----------
 step "Looking for leftovers"
-if grep -rqE 'YOUR_(EMAILJS_PUBLIC_KEY|EMAILJS_SERVICE_ID|EMAILJS_TEMPLATE_ID)' templates 2>/dev/null; then
+if grep -rqE 'YOUR_(PUBLIC_KEY|SERVICE_ID|TEMPLATE_ID)' templates 2>/dev/null; then
   warn "contact form still has EmailJS placeholders (YOUR_PUBLIC_KEY / YOUR_SERVICE_ID / YOUR_TEMPLATE_ID) in templates/partials/contact.html"
 else
   ok "EmailJS values are filled in"
