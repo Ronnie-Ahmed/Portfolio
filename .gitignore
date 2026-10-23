@@ -2,3 +2,4 @@ target/
 tw
 .env
 apply-3d.sh
+tw.exe

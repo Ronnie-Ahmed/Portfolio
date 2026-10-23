@@ -30,13 +30,13 @@ fn render_index() -> String {
         skill_groups: data::skill_groups(),
         services: data::services(),
 
-        emailjs_public_key: env::var("PUBLIC_KEY")
+        emailjs_public_key: env::var("EMAILJS_PUBLIC_KEY")
             .expect("EMAILJS_PUBLIC_KEY is not set"),
 
-        emailjs_service_id: env::var("SERVICE_ID")
+        emailjs_service_id: env::var("EMAILJS_SERVICE_ID")
             .expect("EMAILJS_SERVICE_ID is not set"),
 
-        emailjs_template_id: env::var("TEMPLATE_ID")
+        emailjs_template_id: env::var("EMAILJS_TEMPLATE_ID")
             .expect("EMAILJS_TEMPLATE_ID is not set"),
     }
     .render()
