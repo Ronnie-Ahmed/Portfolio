@@ -71,7 +71,7 @@ ok "dist/ is not ignored"
 
 # ---------- 2. content warnings ----------
 step "Looking for leftovers"
-if grep -rqE 'YOUR_(PUBLIC_KEY|SERVICE_ID|TEMPLATE_ID)' templates 2>/dev/null; then
+if grep -rqE 'YOUR_(EMAILJS_PUBLIC_KEY|EMAILJS_SERVICE_ID|EMAILJS_TEMPLATE_ID)' templates 2>/dev/null; then
   warn "contact form still has EmailJS placeholders (YOUR_PUBLIC_KEY / YOUR_SERVICE_ID / YOUR_TEMPLATE_ID) in templates/partials/contact.html"
 else
   ok "EmailJS values are filled in"
